@@ -55,7 +55,7 @@ body.dark-mode .footer__container {
 }
 
 .navbar {
-  background: #fff;
+  background: #eeeeee;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -127,7 +127,7 @@ body.dark-mode .footer__container {
   background: #833ab4;
   background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
   background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
-  color: #fff;
+  color: #ff0000;
   transition: all 0.3s ease;
 }
 
@@ -168,7 +168,7 @@ body.dark-mode .footer__container {
   }
 
   .navbar__container.active {
-    background-color: #ec7575;
+    background-color: #eeeeee;
   }
 
   .navbar__menu {
@@ -185,7 +185,7 @@ body.dark-mode .footer__container {
   }
 
   .navbar__menu.active {
-    background: #ec7575;
+    background: #eeeeee;
     top: 100%;
     opacity: 1;
     transition: all 0.5s ease;
@@ -203,7 +203,7 @@ body.dark-mode .footer__container {
     height: 3px;
     margin: 5px auto;
     transition: all 0.3s ease-in-out;
-    background: #000;
+    background: #ff0000;
   }
 
   .navbar__links {
@@ -214,7 +214,7 @@ body.dark-mode .footer__container {
   }
 
   .navbar__links:hover {
-    background: #fffd77;
+    background: #eeeeee;
     transition: all 0.3s ease;
   }
 
