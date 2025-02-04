@@ -5,7 +5,7 @@
 // Select DOM elements for mobile menu
 const menu = document.querySelector("#mobile-menu");
 const menuLinks = document.querySelector(".navbar__menu");
-const navbarContainer = document.querySelector(".navbar__container");
+const navbarContainer = document.querySelector(".navbar__right"); // Adjusted to target the right section
 const body = document.body;
 
 // Create and append overlay element (for closing menu on click outside)
@@ -22,7 +22,9 @@ function toggleMenuState() {
   menuLinks.classList.toggle("active");
   navbarContainer.classList.toggle("active");
   body.classList.toggle("active");
-  overlay.style.display = menu.classList.contains("is-active") ? "block" : "none";
+  overlay.style.display = menu.classList.contains("is-active")
+    ? "block"
+    : "none";
   // Optional: prevent body scrolling when menu is active
   body.classList.toggle("no-scroll", menu.classList.contains("is-active"));
 }
@@ -60,7 +62,7 @@ function updateCart() {
     removeBtn.textContent = "Remove";
     removeBtn.addEventListener("click", () => {
       cart.splice(index, 1); // Remove item from cart
-      updateCart();         // Refresh the cart display
+      updateCart(); // Refresh the cart display
     });
 
     li.appendChild(removeBtn);
@@ -123,4 +125,22 @@ checkoutBtn.addEventListener("click", () => {
   } else {
     alert("Please fill in all details and add items to the cart.");
   }
+});
+
+/*************************************
+ *     SEARCH BAR VISIBILITY CODE    *
+ *  (Show on scroll upwards)         *
+ *************************************/
+let lastScrollY = window.scrollY;
+const searchBar = document.getElementById("searchbar");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY < lastScrollY) {
+    // Show search bar when scrolling up
+    searchBar.style.display = "block";
+  } else {
+    // Hide search bar when scrolling down
+    searchBar.style.display = "none";
+  }
+  lastScrollY = window.scrollY;
 });

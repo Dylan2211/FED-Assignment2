@@ -8,75 +8,103 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="navbar__container">
-        <!-- Mobile Menu Toggle -->
-        <div class="navbar__toggle" id="mobile-menu" aria-label="Toggle menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+    <!-- HEADER -->
+    <header class="header">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <a href="/index.html" class="navbar__brand">Mokesell</a>
+        <div class="navbar__left">
+          <!-- Logo -->
         </div>
-        <ul class="navbar__menu">
-          <li class="navbar__btn">
-            <a href="/index.html" class="navbar__links">Main Page</a>
-          </li>
-          <li class="navbar__btn">
-            <a href="/login.html" class="navbar__links">Login</a>
-          </li>
-          <li class="navbar__btn">
-            <a href="/sell.html" class="navbar__links">Sell</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- Main Section -->
-    <div class="main">
-      <div class="main__container">
-        <div class="main__img--container">
-          <img src="/.jpeg" alt="Main Image" id="main__img" />
+        <div class="navbar__right">
+          <!-- Mobile Menu Toggle -->
+          <div class="navbar__toggle" id="mobile-menu" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <!-- Desktop Menu -->
+          <ul class="navbar__menu">
+            <li class="navbar__btn">
+              <a href="/index.html" class="navbar__links">Main Page</a>
+            </li>
+            <li class="navbar__btn">
+              <a href="/login.html" class="navbar__links">Login</a>
+            </li>
+            <li class="navbar__btn">
+              <a href="/sell.html" class="navbar__links">Sell</a>
+            </li>
+          </ul>
         </div>
-        <div class="main__content">
-          <h1>Content</h1>
+      </nav>
+      <!-- Search Bar (hidden by default; revealed on scroll up via JS) -->
+      <div class="searchbar" id="searchbar">
+        <input type="text" placeholder="Search..." id="search-input" />
+        <button id="search-btn">🔍</button>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <!-- Hero Section (Banner) -->
+      <section class="hero">
+        <div class="hero__img--container">
+          <img src="/.jpeg" alt="Main Image" class="hero__img" />
         </div>
-      </div>
-    </div>
+        <div class="hero__content">
+          <h1>Discover Unique Finds</h1>
+          <p>Browse our curated collection of items.</p>
+        </div>
+      </section>
 
-    <!-- Merchandise Section -->
-    <div class="merchandise-container">
-      <!-- Each product -->
-      <div class="product" data-product="Shirt 1">
-        <img
-          src="images/Shirts/Shirt1.png"
-          alt="Shirt 1"
-          class="product-img2"
-        />
-        <button class="view-details-btn">Add to Cart</button>
-      </div>
-      <!-- Add additional product items as needed -->
-      <!-- ... -->
-    </div>
+      <!-- Merchandise Section -->
+      <section class="merchandise">
+        <h2>Merchandise</h2>
+        <div class="products-grid">
+          <!-- Example Product 1 -->
+          <div class="product" data-product="Shirt 1">
+            <img
+              src="images/Shirts/Shirt1.png"
+              alt="Shirt 1"
+              class="product-img"
+            />
+            <button class="view-details-btn">Add to Cart</button>
+          </div>
+          <!-- Example Product 2 -->
+          <div class="product" data-product="Shirt 2">
+            <img
+              src="images/Shirts/Shirt2.png"
+              alt="Shirt 2"
+              class="product-img"
+            />
+            <button class="view-details-btn">Add to Cart</button>
+          </div>
+          <!-- Add more products as needed -->
+        </div>
+      </section>
 
-    <!-- Popup Window for Product Details -->
+      <!-- Checkout / Cart Section -->
+      <section class="checkout">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <div id="checkout-section">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <button id="checkout-btn">Checkout</button>
+          <p id="purchase-success" style="display: none">
+            Purchase Successful!
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- PRODUCT POPUP (hidden by default) -->
     <div id="popup" class="popup">
       <div class="popup-content">
         <span id="close-popup" class="close-btn">&times;</span>
         <h2 id="popup-title"></h2>
         <img id="popup-img" src="" alt="Product Image" />
         <button id="add-to-cart-btn">Add to Cart</button>
-      </div>
-    </div>
-
-    <!-- Cart and Checkout Section -->
-    <div class="checkout-container">
-      <h2>Shopping Cart</h2>
-      <ul id="cart-items"></ul>
-      <div id="checkout-section">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="email" id="email" placeholder="Your Email" required />
-        <button id="checkout-btn">Checkout</button>
-        <p id="purchase-success" style="display: none">Purchase Successful!</p>
       </div>
     </div>
 

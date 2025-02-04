@@ -6,6 +6,7 @@
   scroll-behavior: smooth;
 }
 
+/* Dark mode */
 body.dark-mode {
   background-color: #121212;
   color: #ffffff;
@@ -44,7 +45,7 @@ body.dark-mode .footer__container {
   font-size: 24px;
   cursor: pointer;
 }
-
+/* Button */
 .button:active {
   transform: scale(0.95);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -53,7 +54,7 @@ body.dark-mode .footer__container {
 .button:focus {
   outline: 2px dashed #fcb045;
 }
-
+/* Navbar */
 .navbar {
   background: #eeeeee;
   height: 80px;
@@ -67,14 +68,10 @@ body.dark-mode .footer__container {
 }
 
 .navbar__container {
-  align-items: right;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  height: 80px;
-  z-index: 1;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 50px;
+  padding: 10px 20px;
 }
 
 .navbar__menu {
@@ -131,9 +128,18 @@ body.dark-mode .footer__container {
   transition: all 0.3s ease;
 }
 
+/* Hovering over options */
 .navbar__links:hover {
-  color: #21d4fd;
+  color: #ff6666;
   transition: all 0.3s ease;
+}
+
+.navbar__brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: black; /* Adjust color as needed */
+  text-decoration: none;
+  margin-right: auto; /* Pushes the brand to the left */
 }
 
 .overlay {
@@ -160,11 +166,12 @@ body.dark-mode .footer__container {
   .navbar__container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 80px;
-    z-index: 1;
+    z-index: 1000;
     width: 100%;
     max-width: 1300px;
-    padding: 0;
+    padding: 20px 0;
   }
 
   .navbar__container.active {
@@ -185,13 +192,20 @@ body.dark-mode .footer__container {
   }
 
   .navbar__menu.active {
-    background: #eeeeee;
-    top: 100%;
+    background: #dedede;
+    position: fixed; /* Ensure it covers the full width */
+    top: 80px; /* Position it right below the navbar */
+    left: 0; /* Start from the left edge */
+    width: 100%; /* Cover the full width */
+    height: 450px; /* Cover the entire screen height */
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 99;
-    height: 50vh;
     font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   #navbar__logo {
@@ -254,4 +268,33 @@ body.dark-mode .footer__container {
   #mobile-menu.is-active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+}
+
+/* Searchbar */
+
+.searchbar {
+  position: fixed;
+  top: 80px; /* Position it just below the navbar */
+  width: 100%;
+  background: #fff;
+  padding: 10px;
+  display: none; /* Hidden by default */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.searchbar input {
+  width: 80%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.searchbar button {
+  padding: 8px 12px;
+  background: #ff0000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
