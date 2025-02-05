@@ -1,112 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Basic Meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mokesell</title>
+    <title>Mokesell - Buy and Sell</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- HEADER -->
     <header class="header">
-      <!-- Navbar -->
       <nav class="navbar">
-        <a href="/index.html" class="navbar__brand">Mokesell</a>
-        <div class="navbar__left">
-          <!-- Logo -->
-        </div>
+        <a href="/" class="navbar__brand">Mokesell</a>
         <div class="navbar__right">
-          <!-- Mobile Menu Toggle -->
-          <div class="navbar__toggle" id="mobile-menu" aria-label="Toggle menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
-          <!-- Desktop Menu -->
-          <ul class="navbar__menu">
-            <li class="navbar__btn">
-              <a href="/index.html" class="navbar__links">Main Page</a>
-            </li>
-            <li class="navbar__btn">
-              <a href="/login.html" class="navbar__links">Login</a>
-            </li>
-            <li class="navbar__btn">
-              <a href="/sell.html" class="navbar__links">Sell</a>
-            </li>
-          </ul>
+          <a href="/sell.html" class="navbar__btn">Sell</a>
+          <a href="/login.html" class="navbar__btn">Login</a>
         </div>
       </nav>
-      <!-- Search Bar (hidden by default; revealed on scroll up via JS) -->
-      <div class="searchbar" id="searchbar">
-        <input type="text" placeholder="Search..." id="search-input" />
-        <button id="search-btn">🔍</button>
-      </div>
     </header>
 
-    <!-- MAIN CONTENT -->
-    <main>
-      <!-- Hero Section (Banner) -->
-      <section class="hero">
-        <div class="hero__img--container">
-          <img src="/.jpeg" alt="Main Image" class="hero__img" />
-        </div>
-        <div class="hero__content">
-          <h1>Discover Unique Finds</h1>
-          <p>Browse our curated collection of items.</p>
-        </div>
-      </section>
-
-      <!-- Merchandise Section -->
-      <section class="merchandise">
-        <h2>Merchandise</h2>
-        <div class="products-grid">
-          <!-- Example Product 1 -->
-          <div class="product" data-product="Shirt 1">
-            <img
-              src="images/Shirts/Shirt1.png"
-              alt="Shirt 1"
-              class="product-img"
-            />
-            <button class="view-details-btn">Add to Cart</button>
-          </div>
-          <!-- Example Product 2 -->
-          <div class="product" data-product="Shirt 2">
-            <img
-              src="images/Shirts/Shirt2.png"
-              alt="Shirt 2"
-              class="product-img"
-            />
-            <button class="view-details-btn">Add to Cart</button>
-          </div>
-          <!-- Add more products as needed -->
-        </div>
-      </section>
-
-      <!-- Checkout / Cart Section -->
-      <section class="checkout">
-        <h2>Shopping Cart</h2>
-        <ul id="cart-items"></ul>
-        <div id="checkout-section">
-          <input type="text" id="name" placeholder="Your Name" required />
-          <input type="email" id="email" placeholder="Your Email" required />
-          <button id="checkout-btn">Checkout</button>
-          <p id="purchase-success" style="display: none">
-            Purchase Successful!
-          </p>
-        </div>
-      </section>
-    </main>
-
-    <!-- PRODUCT POPUP (hidden by default) -->
-    <div id="popup" class="popup">
-      <div class="popup-content">
-        <span id="close-popup" class="close-btn">&times;</span>
-        <h2 id="popup-title"></h2>
-        <img id="popup-img" src="" alt="Product Image" />
-        <button id="add-to-cart-btn">Add to Cart</button>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero__content">
+        <h1>Buy and Sell with Ease</h1>
+        <p>Find great deals or sell your items quickly.</p>
+        <a href="/sell.html" class="hero__cta">Start Selling</a>
       </div>
-    </div>
+    </section>
+
+    <!-- PRODUCT GRID -->
+    <section class="products">
+      <h2>Featured Items</h2>
+      <div class="products-grid">
+        <!-- Product 1 -->
+        <div class="product">
+          <img src="images/shirt1.jpg" alt="Shirt 1" class="product__img" />
+          <div class="product__info">
+            <h3 class="product__title">Shirt 1</h3>
+            <p class="product__price">$20</p>
+            <button class="product__btn">Add to Cart</button>
+          </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="product">
+          <img src="images/shirt2.jpg" alt="Shirt 2" class="product__img" />
+          <div class="product__info">
+            <h3 class="product__title">Shirt 2</h3>
+            <p class="product__price">$25</p>
+            <button class="product__btn">Add to Cart</button>
+          </div>
+        </div>
+        <!-- Add more products as needed -->
+      </div>
+    </section>
+
+    <!-- SHOPPING CART -->
+    <section class="cart">
+      <h2>Shopping Cart</h2>
+      <ul id="cart-items" class="cart__items">
+        <!-- Cart items will be dynamically added here -->
+      </ul>
+      <div class="cart__total">
+        <p>Total: <span id="cart-total">$0</span></p>
+        <button id="checkout-btn" class="cart__checkout">Checkout</button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>&copy; 2023 Mokesell. All rights reserved.</p>
+    </footer>
 
     <!-- JavaScript -->
     <script src="app.js"></script>
