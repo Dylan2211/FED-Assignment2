@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - Mokesell</title>
+    <link rel="stylesheet" href="signup_style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Signup Container -->
+    <div class="signup-container">
+      <div class="signup-header">
+        <h1>Create Account</h1>
+        <p>Join our community to start selling</p>
+      </div>
+
+      <!-- Signup Form -->
+      <form class="signup-form" id="signup-form">
+        <!-- Username -->
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Choose a username"
+            required
+          />
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Create a password"
+            required
+          />
+        </div>
+
+        <!-- Confirm password -->
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            placeholder="Confirm your password"
+            required
+          />
+          <small
+            id="password-error"
+            class="error-message"
+            style="display: none; color: red"
+          >
+            Passwords do not match.
+          </small>
+        </div>
+
+        <button type="submit" class="signup-btn">Create Account</button>
+      </form>
+
+      <!-- Additional Links -->
+      <div class="signup-footer">
+        <p>
+          Already have an account?
+          <a href="login.html" class="footer-link">Login</a>
+        </p>
+      </div>
+    </div>
+    <!-- Javascript why not -->
+    <script src="signup_app.js"></script>
+  </body>
+</html>
