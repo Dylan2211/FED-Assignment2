@@ -1,0 +1,127 @@
+/* ======== Base Styles ======== */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* ======== Signup Container ======== */
+.signup-container {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ======== Header ======== */
+.signup-header {
+  margin-bottom: 2rem;
+}
+
+.signup-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #2d3436;
+}
+
+.signup-header p {
+  font-size: 0.9rem;
+  color: #636e72;
+}
+
+/* ======== Form Styles ======== */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: #2d3436;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.9rem;
+  border: 2px solid #dfe6e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #0984e3;
+  outline: none;
+}
+
+/* ======== Signup Button ======== */
+.signup-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #00b894;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.signup-btn:hover {
+  background: #00a383;
+  transform: translateY(-1px);
+}
+
+/* ======== Footer Links ======== */
+.signup-footer {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #636e72;
+}
+
+.signup-footer .footer-link {
+  color: #0984e3;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.signup-footer .footer-link:hover {
+  color: #0773c2;
+}
+
+/* ======== Responsive Design ======== */
+@media screen and (max-width: 480px) {
+  .signup-container {
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+
+  .signup-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .form-group input {
+    padding: 0.8rem;
+  }
+
+  .signup-btn {
+    padding: 0.9rem;
+  }
+}
