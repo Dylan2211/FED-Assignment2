@@ -1,69 +1,65 @@
-// Replace with your actual API key from restdb.io
+// login_app.js
+
+// Replace with your actual API key and account endpoint from restdb.io
 const API_KEY = "67a45d0a0b037f61c0192cb3";
 const API_URL = "https://mokeselldatabase-51ca.restdb.io/rest/account";
 
-document.getElementById("login-form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
-  const statusDiv = document.getElementById("login-status");
+// Wait for the document to load
+document.addEventListener("DOMContentLoaded", function () {
+  // Attach listener to the login form's submit button
+  document.getElementById("login-form").addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-  try {
-    // Query the database for an account with the given email
-    const response = await fetch(`${API_URL}?q={"email": "${email}"}`, {
-      method: "GET",
-      headers: {
-        "x-apikey": API_KEY,
-        "Content-Type": "application/json",
-      },
-    });
-    const accounts = await response.json();
+    // Retrieve the email and password entered by the user
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const statusDiv = document.getElementById("login-status");
 
-    // Check if account exists
-    if (accounts.length === 0) {
-      statusDiv.textContent = "Account not found.";
-      statusDiv.style.color = "red";
-      return;
-    }
-
-    const account = accounts[0];
-
-    // IMPORTANT: This example uses plaintext password comparison.
-    // In production, NEVER store or compare plaintext passwords.
-    if (account.password === password) {
-      // Prepare the updated account data.
-      // Here we update (or add) a field called "lastLogin" with the current timestamp.
-      const updatedAccount = {
-        ...account,
-        lastLogin: new Date().toISOString(),
-      };
-
-      // Use PUT to update the account record on RESTdb.
-      const putResponse = await fetch(`${API_URL}/${account._id}`, {
-        method: "PUT",
+    try {
+      // [STEP 1]: Query the database for an account with the provided email
+      const getSettings = {
+        method: "GET",
         headers: {
           "x-apikey": API_KEY,
           "Content-Type": "application/json",
+          "Cache-Control": "no-cache"
         },
-        body: JSON.stringify(updatedAccount),
-      });
+      };
 
-      if (!putResponse.ok) {
-        throw new Error("Failed to update account information on the server.");
+      const response = await fetch(`${API_URL}?q={"email": "${email}"}`, getSettings);
+      const accounts = await response.json();
+
+      // [STEP 2]: Check if an account exists with that email
+      if (accounts.length === 0) {
+        statusDiv.textContent = "Account not found.";
+        statusDiv.style.color = "red";
+        return;
       }
 
+      const account = accounts[0];
+
+      // [STEP 3]: Compare the provided password (plaintext demo only)
+      if (account.password !== password) {
+        statusDiv.textContent = "Invalid password.";
+        statusDiv.style.color = "red";
+        return;
+      }
+
+      // [STEP 4]: Login successful. Show a success message and redirect.
       statusDiv.style.color = "green";
       statusDiv.textContent = "Login successful! Redirecting...";
+      
+      // Optionally, store login data in localStorage if needed:
+      // localStorage.setItem("loggedInUser", JSON.stringify(account));
+
       setTimeout(() => {
         window.location.href = "profile.html";
       }, 1000);
-    } else {
-      statusDiv.textContent = "Invalid password.";
+
+    } catch (error) {
+      console.error("Login error:", error);
+      statusDiv.textContent = "An error occurred during login: " + error.message;
       statusDiv.style.color = "red";
     }
-  } catch (error) {
-    console.error("Login error:", error);
-    statusDiv.textContent = "An error occurred during login: " + error.message;
-    statusDiv.style.color = "red";
-  }
+  });
 });
