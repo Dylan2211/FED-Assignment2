@@ -1,0 +1,172 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: calc(100% - 200px);
+    max-width: 1720px;
+    margin: 0 auto;
+}
+
+/* Large Box Container */
+.box-container {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    margin: 50px 0;
+}
+
+.box {
+    width: 400px;
+    height: 250px;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+/* Small Box Container */
+.small-box-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px; /* Ensures boxes start right under the heading */
+}
+
+.small-box {
+    width: 180px;
+    height: 120px;
+    background: #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+}
+
+.small-box img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+/* Trending Section */
+.trending-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 200px);
+    max-width: 1720px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.trending-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0; /* Ensures it starts right under the heading */
+}
+
+.trending-box {
+    background: #ccc;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+/* Arrow for "See More" */
+.see-more-arrow {
+    height: 24px;
+    width: auto;
+    cursor: pointer;
+}
+
+
+/* Listing Section */
+.listing-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.listing {
+    width: 300px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.listing-top {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.profile-pic {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.username, .time {
+    font-size: 20px;
+    margin: 0;
+}
+
+.listing-img {
+    width: 300px;
+    height: 370px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.listing-info {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.title, .price, .condition {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.icon {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    margin-top: 5px;
+}
+
