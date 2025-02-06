@@ -69,8 +69,8 @@ body {
 .trending-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: calc(100% - 200px);
+    align-items: flex-start; /* Ensure elements align to the top */
+    width: 100%; /* Ensure it takes full width */
     max-width: 1720px;
     margin-top: 30px;
     margin-bottom: 10px;
@@ -79,9 +79,10 @@ body {
 .trending-container {
     display: flex;
     gap: 20px;
-    justify-content: center;
+    justify-content: flex-start; /* Align the items to the left */
     flex-wrap: wrap;
-    margin-top: 0; /* Ensures it starts right under the heading */
+    margin-top: 0;
+    align-items: flex-start;
 }
 
 .trending-box {
@@ -90,7 +91,9 @@ body {
     font-size: 18px;
     border-radius: 8px;
     white-space: nowrap;
+    align-items: flex-start; /* Ensure box content starts at the top */
 }
+
 
 /* Arrow for "See More" */
 .see-more-arrow {
@@ -169,4 +172,5 @@ body {
     object-fit: contain;
     margin-top: 5px;
 }
+
 
