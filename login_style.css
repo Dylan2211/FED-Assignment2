@@ -1,130 +1,132 @@
 /* ======== Login Page Styles ======== */
 /* Body (Aligns the container in the middle of the page)*/
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f8f9fa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  /* Container */
+  font-family: "Inter", sans-serif;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Container */
+.login-container {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Spacing from Email */
+.login-header {
+  margin-bottom: 2rem;
+}
+
+/* (Welcome back) */
+.login-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* (Login to your account to continue) */
+.login-header p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Spacing between password column, Email column */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Make the labels align left */
+.form-group {
+  text-align: left;
+}
+
+/* Name of Labels (Email and Password) */
+.form-group label {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Input field */
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+/* Border color when typing text */
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Login button */
+.login-btn {
+  background: #ff0000;
+  color: #fff;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Login button whne hovering */
+.login-btn:hover {
+  background: #cd0000;
+}
+
+.login-footer {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.login-footer .footer-link {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.login-footer .footer-link:hover {
+  color: #0056b3;
+}
+
+/* ======== Responsive Design ======== */
+@media screen and (max-width: 480px) {
   .login-container {
-    background: #fff;
-    padding: 2.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
+    padding: 1.5rem;
   }
 
-  /* Spacing from Email */
-  .login-header {
-    margin-bottom: 2rem;
-  }
-  
-  /* (Welcome back) */
   .login-header h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-  }
-  
-  /* (Login to your account to continue) */
-  .login-header p {
-    font-size: 0.9rem;
-    color: #666;
-  }
-  
-  /* Spacing between password column, Email column */
-  .login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  /* Make the labels align left */
-  .form-group {
-    text-align: left;
-  }
-  
-  /* Name of Labels (Email and Password) */
-  .form-group label {
-    font-size: 0.9rem;
-    color: #333;
-    margin-bottom: 0.5rem;
-    display: block;
-  }
-  
-  /* Input field */
-  .form-group input {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
+    font-size: 1.8rem;
   }
 
-  /* Border color when typing text */
-  .form-group input:focus {
-    border-color: #007bff;
-    outline: none;
+  .login-header p {
+    font-size: 0.8rem;
   }
-  
+
+  .form-group input {
+    padding: 0.7rem;
+  }
+
   .login-btn {
-    background: #FF0000;
-    color: #fff;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    padding: 0.7rem;
   }
-  
-  .login-btn:hover {
-    background: #0056b3;
-  }
-  
-  .login-footer {
-    margin-top: 1.5rem;
-    font-size: 0.9rem;
-    color: #666;
-  }
-  
-  .login-footer .footer-link {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .login-footer .footer-link:hover {
-    color: #0056b3;
-  }
-  
-  /* ======== Responsive Design ======== */
-  @media screen and (max-width: 480px) {
-    .login-container {
-      padding: 1.5rem;
-    }
-  
-    .login-header h1 {
-      font-size: 1.8rem;
-    }
-  
-    .login-header p {
-      font-size: 0.8rem;
-    }
-  
-    .form-group input {
-      padding: 0.7rem;
-    }
-  
-    .login-btn {
-      padding: 0.7rem;
-    }
-  }
+}
