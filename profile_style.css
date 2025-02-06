@@ -1,132 +1,108 @@
-/* ======== Base Styles ======== */
-body {
-  font-family: "Inter", sans-serif;
-  background-color: #f8f9fa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+/* Global Styles */
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+body {
+  background: #f8f8f8;
 }
 
-
-body.dark-mode .navbar {
-  background-color: #1f1f1f;
-}
-
-
-/* ======== Navbar ======== */
+/* Navbar */
 .navbar {
-  background: #fff;
-  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
+  background: #fff;
+  padding: 1rem 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
-
 .navbar__brand {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #333;
   text-decoration: none;
-}
-
-.navbar__right {
+  color: black;
   display: flex;
-  gap: 1.5rem;
   align-items: center;
 }
-
-.navbar__btn {
+.navbar__brand img {
+  width: 40px;
+  margin-right: 10px;
+}
+.navbar__links a {
+  margin: 0 1rem;
   text-decoration: none;
-  color: #333;
+  color: black;
   font-weight: 500;
-  transition: color 0.3s ease;
+}
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.sell-btn {
+  background: #ff5a5f;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
-/* ======== Profile Container ======== */
+/* Profile Section */
 .profile-container {
-  background: #fff;
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+}
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.profile-picture {
+  width: 60px;
+  height: 60px;
+  background: #ddd;
+  border-radius: 50%;
+}
+.profile-details {
+  color: gray;
+}
+.edit-profile-btn {
+  background: #ff5a5f;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Tabs */
+.profile-tabs {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  margin-top: 2rem;
+}
+.profile-tabs a {
+  padding: 1rem;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  flex: 1;
   text-align: center;
 }
-
-/* ======== Header ======== */
-.profile-header {
-  margin-bottom: 2rem;
-}
-
-.profile-header h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #2d3436;
-}
-
-.profile-header p {
-  font-size: 0.9rem;
-  color: #636e72;
-}
-
-/* ======== Profile Content ======== */
-.profile-content {
-  text-align: left;
-}
-
-.profile-content p {
-  font-size: 1rem;
-  color: #2d3436;
-  margin-bottom: 1rem;
-}
-
-.profile-link {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #0984e3;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.profile-link:hover {
-  color: #0773c2;
-}
-
-@media screen and (max-width: 960px) {
-  .navbar {
-    padding: 0 1rem;
-  }
-
-  .navbar__menu {
-    position: fixed;
-    top: 80px;
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - 80px);
-    background: #fff;
-    flex-direction: column;
-    transition: left 0.3s ease;
-  }
-
-  .navbar__menu.active {
-    left: 0;
-  }
-
-  .navbar__links {
-    padding: 1.5rem;
-    font-size: 1.2rem;
-  }
-
-  .searchbar {
-    top: 60px;
-  }
+.profile-tabs a.active {
+  border-bottom: 2px solid black;
 }
