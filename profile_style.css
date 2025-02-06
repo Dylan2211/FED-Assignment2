@@ -9,6 +9,47 @@ body {
   margin: 0;
 }
 
+
+body.dark-mode .navbar {
+  background-color: #1f1f1f;
+}
+
+
+/* ======== Navbar ======== */
+.navbar {
+  background: #fff;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+}
+
+.navbar__right {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.navbar__btn {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
 /* ======== Profile Container ======== */
 .profile-container {
   background: #fff;
@@ -58,4 +99,34 @@ body {
 
 .profile-link:hover {
   color: #0773c2;
+}
+
+@media screen and (max-width: 960px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .navbar__menu {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: #fff;
+    flex-direction: column;
+    transition: left 0.3s ease;
+  }
+
+  .navbar__menu.active {
+    left: 0;
+  }
+
+  .navbar__links {
+    padding: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .searchbar {
+    top: 60px;
+  }
 }
