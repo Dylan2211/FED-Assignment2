@@ -9,6 +9,14 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <style>
+      /* You can keep your existing login_style.css or add extra styles here */
+      .login-status {
+        margin-top: 1rem;
+        text-align: center;
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
     <!-- Login Container -->
@@ -19,7 +27,7 @@
       </div>
 
       <!-- Login Form -->
-      <form class="login-form">
+      <form class="login-form" id="login-form">
         <div class="form-group">
           <label for="email">Email</label>
           <input
@@ -45,6 +53,9 @@
         <button type="submit" class="login-btn">Login</button>
       </form>
 
+      <!-- Status Message -->
+      <div id="login-status" class="login-status"></div>
+
       <!-- Additional Links -->
       <div class="login-footer">
         <p>
@@ -52,11 +63,12 @@
           <a href="signup.html" class="footer-link">Sign Up</a>
         </p>
         <p>
-          <a href="/forgot-password.html" class="footer-link"
-            >Forgot Password?</a
-          >
+          <a href="/forgot-password.html" class="footer-link">Forgot Password?</a>
         </p>
       </div>
     </div>
+
+    <!-- RESTdb Login Script -->
+    <script src="login_app.js"></script>
   </body>
 </html>
