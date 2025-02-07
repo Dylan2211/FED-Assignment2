@@ -106,3 +106,17 @@ body {
 .profile-tabs a.active {
   border-bottom: 2px solid black;
 }
+
+/* Smooth transitions */
+#loader {
+  transition: opacity 0.3s ease;
+}
+
+#profile-content {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#profile-content.loaded {
+  opacity: 1;
+}

@@ -64,3 +64,4 @@ form.addEventListener("submit", async (e) => {
     alert("An error occurred during account creation: " + error.message);
   }
 });
+
