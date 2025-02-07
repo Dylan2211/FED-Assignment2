@@ -2,7 +2,7 @@
 const form = document.getElementById("signup-form");
 const passwordInput = document.getElementById("password");
 const confirmPasswordInput = document.getElementById("confirm-password");
-const passwordError = document.getElementById("password-error");
+const passwordError = document.getElementById("password-error")
 
 // RESTdb configuration
 const API_KEY = "67a45d0a0b037f61c0192cb3";
@@ -54,14 +54,10 @@ form.addEventListener("submit", async (e) => {
     const data = await response.json();
     console.log("Account created:", data);
 
-    // Provide feedback to the user and redirect to profile.html after 2 seconds
-    alert("Account created successfully! Redirecting to your profile...");
-    setTimeout(() => {
-      window.location.href = "profile.html";
-    }, 2000);
+    // Redirect to the Lottie animation page.
+    window.location.href = "redirect.html";
   } catch (error) {
     console.error("Signup error:", error);
     alert("An error occurred during account creation: " + error.message);
   }
 });
-
