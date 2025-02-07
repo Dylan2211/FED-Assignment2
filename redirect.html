@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <lottie-player
+      id="animation"
+      src="https://lottie.host/5b2a05e7-8f8d-4c8a-8e5d-26e8e9d04b33/4jXj3YH9AV.json"
+      style="width: 150px; height: 150px"
+      speed="1"
+      autoplay
+    ></lottie-player>
+
+    <script>
+      const animation = document.getElementById("animation");
+
+      // Wait for the animation to complete before redirecting
+      animation.addEventListener("complete", () => {
+        window.location.href = "profile.html";
+      });
+
+      // If the animation loops, set a manual timeout instead (e.g., 3 seconds)
+      setTimeout(() => {
+        window.location.href = "profile.html";
+      }, 3000); // Adjust delay as needed
+    </script>
+  </body>
+</html>

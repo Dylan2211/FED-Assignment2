@@ -4,9 +4,8 @@
 const API_KEY = "67a45d0a0b037f61c0192cb3";
 const API_URL = "https://mokeselldatabase-51ca.restdb.io/rest/account";
 
-// Wait for the document to load
 document.addEventListener("DOMContentLoaded", function () {
-  // Attach listener to the login form's submit button
+  // Attach listener to the login form's submit event
   document.getElementById("login-form").addEventListener("submit", async function (e) {
     e.preventDefault();
 
@@ -14,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
     const statusDiv = document.getElementById("login-status");
+    const loader = document.getElementById("loader"); // Loader overlay element
 
     try {
       // [STEP 1]: Query the database for an account with the provided email
@@ -45,16 +45,20 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      // [STEP 4]: Login successful. Show a success message and redirect.
+      // [STEP 4]: Login successful. Update status, show loader, and redirect.
       statusDiv.style.color = "green";
       statusDiv.textContent = "Login successful! Redirecting...";
-      
+
       // Optionally, store login data in localStorage if needed:
       // localStorage.setItem("loggedInUser", JSON.stringify(account));
 
+      // Display the loader overlay (with Lottie animation)
+      loader.style.display = "flex";
+
+      // Wait for 2 seconds (adjust timing as needed) before redirecting
       setTimeout(() => {
         window.location.href = "profile.html";
-      }, 1000);
+      }, 2000);
 
     } catch (error) {
       console.error("Login error:", error);
