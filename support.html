@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="support.css">
+    <script src="support.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+          <img src="images/Logo.png" class="nav-logo" alt="Logo">
+          <h1 class="nav-title">Mokesell</h1>
+      
+          <!-- Main Navigation Dropdown Menus -->
+          <div class="nav-dropdowns">
+            <div class="dropdown">
+              <button>Electronics</button>
+              <div class="dropdown-content">
+                <a href="#">Phones</a>
+                <a href="#">Laptops</a>
+                <a href="#">Cameras</a>
+                <a href="#">Accessories</a>
+              </div>
+            </div>
+      
+            <div class="dropdown">
+              <button>Fashion</button>
+              <div class="dropdown-content">
+                <a href="#">Men's Wear</a>
+                <a href="#">Women's Wear</a>
+                <a href="#">Shoes</a>
+                <a href="#">Accessories</a>
+              </div>
+            </div>
+      
+            <div class="dropdown">
+              <button>Services</button>
+              <div class="dropdown-content">
+                <a href="#">Home Cleaning</a>
+                <a href="#">Repair & Maintenance</a>
+                <a href="#">Beauty & Wellness</a>
+                <a href="#">Others</a>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Search Bar -->
+          <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button type="submit">🔍</button>
+          </div>
+      
+          <!-- Right Navigation Icon and Filter Panel -->
+          <div class="nav-icons">
+            <div class="filter-icon" onclick="toggleFilter()">
+              <img src="images/Filter.png" alt="Filter Icon">
+              <div id="filterPanel" class="filter-panel">
+                <form>
+                  <!-- Top Buttons -->
+                  <div class="filter-header">
+                    <button type="button" class="filter-btn">Listings near me</button>
+                    <button type="button" class="filter-btn">All of Singapore</button>
+                  </div>
+      
+                  <!-- Search by Heading -->
+                  <h3>Search by</h3>
+      
+                  <!-- Filter Group for MRT -->
+                  <div class="filter-group">
+                    <div class="filter-group-label">MRT</div>
+                    <div class="filter-group-content">
+                      <label>
+                        <input type="checkbox" name="mrt[]" value="admiralty"> Admiralty (NS10)
+                      </label>
+                      <label>
+                        <input type="checkbox" name="mrt[]" value="sembawang"> Sembawang (NS11)
+                      </label>
+                      <label>
+                        <input type="checkbox" name="mrt[]" value="woodlands"> Woodlands (NS9)
+                      </label>
+                      <label>
+                        <input type="checkbox" name="mrt[]" value="yishun"> Yishun (NS13)
+                      </label>
+                      <label>
+                        <input type="checkbox" name="mrt[]" value="khatib"> Khatib (NS14)
+                      </label>
+                      <label>
+                        <input type="checkbox" name="mrt[]" value="yio-chu-kang"> Yio Chu Kang (NS15)
+                      </label>
+                      <label>
+                        <input type="checkbox" name="mrt[]" value="ang-mo-kio"> Ang Mo Kio (NS16)
+                      </label>
+                      <label>
+                        <input type="checkbox" name="mrt[]" value="bishan"> Bishan (NS17)
+                      </label>
+                      <label>
+                        <input type="checkbox" name="mrt[]" value="toa-payoh"> Toa Payoh (NS19)
+                      </label>
+                      <label>
+                        <input type="checkbox" name="mrt[]" value="novena"> Novena (NS20)
+                      </label>
+                    </div>
+                  </div>
+      
+                  <!-- Filter Group for Area -->
+                  <div class="filter-group">
+                    <div class="filter-group-label">Area</div>
+                    <div class="filter-group-content">
+                      <label>
+                        <input type="checkbox" name="area[]" value="ang-mo-kio"> Ang Mo Kio
+                      </label>
+                      <label>
+                        <input type="checkbox" name="area[]" value="bedok"> Bedok
+                      </label>
+                      <label>
+                        <input type="checkbox" name="area[]" value="bishan"> Bishan
+                      </label>
+                      <label>
+                        <input type="checkbox" name="area[]" value="toa-payoh"> Toa Payoh
+                      </label>
+                      <label>
+                        <input type="checkbox" name="area[]" value="jurong-west"> Jurong West
+                      </label>
+                      <label>
+                        <input type="checkbox" name="area[]" value="clementi"> Clementi
+                      </label>
+                      <label>
+                        <input type="checkbox" name="area[]" value="hougang"> Hougang
+                      </label>
+                      <label>
+                        <input type="checkbox" name="area[]" value="tampines"> Tampines
+                      </label>
+                      <label>
+                        <input type="checkbox" name="area[]" value="serangoon"> Serangoon
+                      </label>
+                      <label>
+                        <input type="checkbox" name="area[]" value="bukit-timah"> Bukit Timah
+                      </label>
+                    </div>
+                  </div>
+      
+                  <!-- Filter Group for Neighbourhood -->
+                  <div class="filter-group">
+                    <div class="filter-group-label">Neighbourhood</div>
+                    <div class="filter-group-content">
+                      <label>
+                        <input type="checkbox" name="neighbourhood[]" value="admiralty"> Admiralty
+                      </label>
+                      <label>
+                        <input type="checkbox" name="neighbourhood[]" value="yishun"> Yishun
+                      </label>
+                      <label>
+                        <input type="checkbox" name="neighbourhood[]" value="sembawang"> Sembawang
+                      </label>
+                      <label>
+                        <input type="checkbox" name="neighbourhood[]" value="woodlands"> Woodlands
+                      </label>
+                      <label>
+                        <input type="checkbox" name="neighbourhood[]" value="ang-mo-kio"> Ang Mo Kio
+                      </label>
+                      <label>
+                        <input type="checkbox" name="neighbourhood[]" value="bishan"> Bishan
+                      </label>
+                      <label>
+                        <input type="checkbox" name="neighbourhood[]" value="serangoon"> Serangoon
+                      </label>
+                      <label>
+                        <input type="checkbox" name="neighbourhood[]" value="tiong-bahru"> Tiong Bahru
+                      </label>
+                      <label>
+                        <input type="checkbox" name="neighbourhood[]" value="little-india"> Little India
+                      </label>
+                      <label>
+                        <input type="checkbox" name="neighbourhood[]" value="chinatown"> Chinatown
+                      </label>
+                    </div>
+                  </div>
+      
+                  <!-- Apply Filters Button -->
+                  <button type="submit" class="apply-btn">Apply Filters</button>
+                </form>
+              </div>
+            </div>
+      
+            <!-- Left Navigation Icons -->
+            <div class="left-nav-icons">
+              <img src="images/Profile.png" alt="Left Icon 1">
+              <img src="images/Cart.png" alt="Left Icon 2">
+              <img src="images/Chat.png" alt="Left Icon 3">
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="faq-container">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">How do I list an item for sale?</div>
+            <div class="faq-answer">To list an item, click on 'Sell' at the top of the page, upload images, add a description, and set your price.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Is there a fee for selling items?</div>
+            <div class="faq-answer">No, listing an item is free! However, we may charge a small fee for premium listings that boost visibility.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How can I contact a seller?</div>
+            <div class="faq-answer">You can message the seller directly by clicking on the 'Contact Seller' button on their listing page.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What payment methods are accepted?</div>
+            <div class="faq-answer">Buyers and sellers can agree on payment methods. We recommend cash on delivery, bank transfer, or using secure third-party payment services.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Can I return an item after purchase?</div>
+            <div class="faq-answer">Since this is a second-hand marketplace, all sales are final unless otherwise agreed upon with the seller.</div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <h1 class="centered">NEED HELP? WORRY NOT</h1>
+        <h2 class="centered">WE'RE HERE TO HELP YOU</h2>
+
+        <p>We're here to assist you in any way we can. Whether you have a question about our loyalty program, need technical support, or want to explore partnership opportunities, our dedicated team is ready to help. Reach out to us using the contact information provided below, and we'll get back to you as soon as possible.</p>
+
+        
+        <div class="support-container">
+            <h3>Support Hotline</h3>
+            <p>Call us at: 123-456-789</p>
+        </div>
+        
+        <div class="contact-form-container">
+            <h2>Contact Us</h2>
+            <form>
+                <div class="contact-form-row">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" placeholder="First name">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" placeholder="Last name">
+                    </div>
+                </div>
+                <div class="contact-form-row">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="invoice">Invoice Number</label>
+                        <input type="text" id="invoice" placeholder="Invoice Number">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Please describe the issue you're facing</label>
+                    <textarea id="message" placeholder="Your message"></textarea>
+                </div>
+                <div class="submit-btn-container">
+                    <button type="submit" class="btn-submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <!-- About & Trust Column -->
+                    <div class="footer-column">
+                        <h3>About MokeSell</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Trust & Safety</a></li>
+                            <li><a href="#">Community Guidelines</a></li>
+                            <li><a href="#">Press & Media</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Support Column -->
+                    <div class="footer-column">
+                        <h3>Support</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Safety Tips</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Report an Item</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Buying & Selling Column -->
+                    <div class="footer-column">
+                        <h3>Buy & Sell</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">How to Sell</a></li>
+                            <li><a href="#">Buyer Protection</a></li>
+                            <li><a href="#">Pricing & Fees</a></li>
+                            <li><a href="#">Shipping Information</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Connect Column -->
+                    <div class="footer-column">
+                        <h3>Connect With Us</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Success Stories</a></li>
+                            <li><a href="#">Mobile App</a></li>
+                        </ul>
+                        <div class="footer-social">
+                            <a href="#">Facebook</a>
+                            <a href="#">Instagram</a>
+                            <a href="#">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Trust Badges -->
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <span>✓ Secure Payments</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span>🛡️ Buyer Protection</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span>👥 Verified Users</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span>📱 24/7 Support</span>
+                    </div>
+                </div>
+        
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <p>© 2025 MokeSell. All rights reserved. Terms of Use • Privacy Policy • Cookie Policy</p>
+                </div>
+            </div>
+        </footer>
+
+</body>
+</html>
