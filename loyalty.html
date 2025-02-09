@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loyalty Points - Mokesell</title>
+    <link rel="stylesheet" href="profile_style.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Profile Page JavaScript -->
+    <script src="profile_app.js" defer></script>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <img
+          src="images/Logo.png"
+          class="nav-logo"
+          alt="Logo"
+          onclick="window.location.href='home_page.html'"
+        />
+        <h1 class="nav-title" onclick="window.location.href='home_page.html'">
+          Mokesell
+        </h1>
+
+        <!-- Main Navigation Dropdown Menus -->
+        <div class="nav-dropdowns">
+          <div class="dropdown">
+            <button>Electronics</button>
+            <div class="dropdown-content">
+              <a href="phone.html">Phones</a>
+              <a href="#">Laptops</a>
+              <a href="#">Cameras</a>
+              <a href="#">Accessories</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button>Fashion</button>
+            <div class="dropdown-content">
+              <a href="menwear.html">Men's Wear</a>
+              <a href="#">Women's Wear</a>
+              <a href="#">Shoes</a>
+              <a href="#">Accessories</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button>Services</button>
+            <div class="dropdown-content">
+              <a href="#">Home Cleaning</a>
+              <a href="#">Repair & Maintenance</a>
+              <a href="beauty&wellness.html">Beauty & Wellness</a>
+              <a href="#">Others</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+          <input type="text" placeholder="Search..." />
+          <button type="submit">🔍</button>
+        </div>
+
+        <!-- Right Navigation Icon and Filter Panel -->
+        <div class="nav-icons">
+          <div class="filter-icon" onclick="toggleFilter()">
+            <img src="images/Filter.png" alt="Filter Icon" />
+            <div id="filterPanel" class="filter-panel">
+              <form>
+                <!-- Top Buttons -->
+                <div class="filter-header">
+                  <button type="button" class="filter-btn">
+                    Listings near me
+                  </button>
+                  <button type="button" class="filter-btn">
+                    All of Singapore
+                  </button>
+                </div>
+                <!-- Search by Heading -->
+                <h3>Search by</h3>
+                <!-- (Filter groups go here as in your existing code) -->
+                <!-- Apply Filters Button -->
+                <button type="submit" class="apply-btn">Apply Filters</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Left Navigation Icons -->
+          <div class="left-nav-icons">
+            <a href="profile.html">
+              <img src="images/Profile.png" alt="Profile Icon" />
+            </a>
+            <a href="cart.html">
+              <img src="images/Cart.png" alt="Cart Icon" />
+            </a>
+            <img src="images/Chat.png" alt="Chat Icon" />
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <div class="profile-container">
+      <!-- Profile Header -->
+      <div class="profile-header">
+        <div class="profile-info">
+          <div class="profile-picture">
+            <!-- Add your profile picture here -->
+          </div>
+          <div>
+            <h2>Username</h2>
+            <p class="profile-details">Profile details ➤</p>
+          </div>
+        </div>
+        <div class="profile-credibility">
+          <p>Credibility:</p>
+          <span>No review yet</span>
+          <button class="edit-profile-btn">Edit Profile</button>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="profile-tabs">
+        <a href="profile.html">Listings</a>
+        <a href="loyalty.html" class="active">Loyalty Points</a>
+        <a href="profile_balance.html">Balance</a>
+      </div>
+
+      <!-- Loyalty Points Content -->
+      <div class="loyalty-content">
+        <h3>Your Loyalty Points</h3>
+        <p>
+          You have earned <strong>500</strong> loyalty points so far!
+          Keep shopping and inviting your friends to earn more points.
+        </p>
+
+        <!-- Loyalty Points History (Optional) -->
+        <div class="loyalty-history">
+          <h4>Loyalty Points History</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Activity</th>
+                <th>Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2025-01-15</td>
+                <td>Purchase</td>
+                <td>+50</td>
+              </tr>
+              <tr>
+                <td>2025-01-10</td>
+                <td>Referral Bonus</td>
+                <td>+100</td>
+              </tr>
+              <tr>
+                <td>2024-12-30</td>
+                <td>Review Bonus</td>
+                <td>+25</td>
+              </tr>
+              <!-- Additional rows as needed -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sell Modal (if applicable) -->
+    <div id="sellModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Create a New Listing</h3>
+        <form id="sellForm" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="itemimage">Item Image:</label>
+            <input
+              type="file"
+              id="itemimage"
+              name="itemimage"
+              accept="image/*"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea
+              id="description"
+              name="description"
+              rows="4"
+              placeholder="Enter a description..."
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit">List Item</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

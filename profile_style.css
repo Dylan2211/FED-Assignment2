@@ -9,43 +9,6 @@ body {
   background: #f8f8f8;
 }
 
-/* Navbar
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #fff;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-.navbar__brand {
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: black;
-  display: flex;
-  align-items: center;
-}
-.navbar__brand img {
-  width: 40px;
-  margin-right: 10px;
-}
-.navbar__links a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
-}
-.navbar__right {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-  */
 .sell-btn {
   background: #ff5a5f;
   color: white;
