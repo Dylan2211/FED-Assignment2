@@ -172,11 +172,36 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!gameOver) animateTrex();
   }, frameInterval);
 
-  // Gradually increase game speed
-  function gameLoop() {
-    if (gameOver) return;
-    if (gameSpeed < maxSpeed) gameSpeed += speedIncreaseRate;
-    requestAnimationFrame(gameLoop);
-  }
-  gameLoop();
+// Gradually increase game speed
+function gameLoop() {
+  if (gameOver) return;
+  if (gameSpeed < maxSpeed) gameSpeed += speedIncreaseRate;
+  requestAnimationFrame(gameLoop);
+}
+gameLoop();
+
+/* -------------------------------
+            Modal & Popup Logic for the Game
+            ------------------------------- */
+// Function to display the game modal and (optionally) reset game variables
+function showGameModal() {
+  // Reset game variables for a new session (optional)
+  gameOver = false;
+  position = 0;
+  velocity = 0;
+  jumpCount = 0;
+  trex.style.bottom = "0px";
+  gameOverText.style.display = "none";
+  // Optionally reset spawnRate and gameSpeed here:
+  // spawnRate = 2500;
+  // gameSpeed = 5;
+  document.getElementById("gameModal").style.display = "block";
+}
+
+// Close modal when the close button is clicked
+document.getElementById("closeModal").addEventListener("click", () => {
+  document.getElementById("gameModal").style.display = "none";
 });
+
+// Automatically show the game modal every 90 seconds (90,000 ms)
+setInterval(showGameModal, 90000);
