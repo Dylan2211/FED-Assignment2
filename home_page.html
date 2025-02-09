@@ -14,15 +14,22 @@
   <body>
     <nav class="navbar">
       <div class="nav-container">
-        <img src="images/Logo.png" class="nav-logo" alt="Logo" />
-        <h1 class="nav-title">Mokesell</h1>
+        <img
+          src="images/Logo.png"
+          class="nav-logo"
+          alt="Logo"
+          onclick="window.location.href='home_page.html'"
+        />
+        <h1 class="nav-title" onclick="window.location.href='home_page.html'">
+          Mokesell
+        </h1>
 
         <!-- Main Navigation Dropdown Menus -->
         <div class="nav-dropdowns">
           <div class="dropdown">
             <button>Electronics</button>
             <div class="dropdown-content">
-              <a href="#">Phones</a>
+              <a href="phone.html">Phones</a>
               <a href="#">Laptops</a>
               <a href="#">Cameras</a>
               <a href="#">Accessories</a>
@@ -32,7 +39,7 @@
           <div class="dropdown">
             <button>Fashion</button>
             <div class="dropdown-content">
-              <a href="#">Men's Wear</a>
+              <a href="menwear.html">Men's Wear</a>
               <a href="#">Women's Wear</a>
               <a href="#">Shoes</a>
               <a href="#">Accessories</a>
@@ -44,7 +51,7 @@
             <div class="dropdown-content">
               <a href="#">Home Cleaning</a>
               <a href="#">Repair & Maintenance</a>
-              <a href="#">Beauty & Wellness</a>
+              <a href="beauty&wellness.html">Beauty & Wellness</a>
               <a href="#">Others</a>
             </div>
           </div>
@@ -276,8 +283,12 @@
 
           <!-- Left Navigation Icons -->
           <div class="left-nav-icons">
-            <img src="images/Profile.png" alt="Left Icon 1" />
-            <img src="images/Cart.png" alt="Left Icon 2" />
+            <a href="profile.html">
+              <img src="images/Profile.png" alt="Left Icon 1" />
+            </a>
+            <a href="cart.html">
+              <img src="images/Cart.png" alt="Left Icon 2" />
+            </a>
             <img src="images/Chat.png" alt="Left Icon 3" />
           </div>
         </div>
@@ -290,8 +301,6 @@
         <div class="box">Box 1</div>
         <div class="box">Box 2</div>
       </div>
-
-
 
       <!-- Trending Now Section -->
       <div class="trending-header">
@@ -312,7 +321,11 @@
       <div class="listing-container">
         <div class="listing">
           <div class="listing-top">
-            <img src="images/profile1.jpg" alt="User Profile" class="profile-pic" />
+            <img
+              src="images/profile1.jpg"
+              alt="User Profile"
+              class="profile-pic"
+            />
             <div class="user-info">
               <p class="username">Username</p>
               <p class="time">7 minutes ago</p>
@@ -329,7 +342,11 @@
 
         <div class="listing">
           <div class="listing-top">
-            <img src="images/profile10.jpg" alt="User Profile" class="profile-pic" />
+            <img
+              src="images/profile10.jpg"
+              alt="User Profile"
+              class="profile-pic"
+            />
             <div class="user-info">
               <p class="username">Username</p>
               <p class="time">7 minutes ago</p>
@@ -346,7 +363,11 @@
 
         <div class="listing">
           <div class="listing-top">
-            <img src="images/profile2.jpg" alt="User Profile" class="profile-pic" />
+            <img
+              src="images/profile2.jpg"
+              alt="User Profile"
+              class="profile-pic"
+            />
             <div class="user-info">
               <p class="username">Username</p>
               <p class="time">7 minutes ago</p>
@@ -363,7 +384,11 @@
 
         <div class="listing">
           <div class="listing-top">
-            <img src="images/profile3.jpg" alt="User Profile" class="profile-pic" />
+            <img
+              src="images/profile3.jpg"
+              alt="User Profile"
+              class="profile-pic"
+            />
             <div class="user-info">
               <p class="username">Username</p>
               <p class="time">7 minutes ago</p>
@@ -380,7 +405,11 @@
 
         <div class="listing">
           <div class="listing-top">
-            <img src="images/profile5.jpg" alt="User Profile" class="profile-pic" />
+            <img
+              src="images/profile5.jpg"
+              alt="User Profile"
+              class="profile-pic"
+            />
             <div class="user-info">
               <p class="username">Username</p>
               <p class="time">7 minutes ago</p>
@@ -402,182 +431,261 @@
       </div>
     </div>
 
-<!-- Recommended Section -->
-<div class="recommended-header">
-  <h2>Recommended For You</h2>
-</div>
-<div class="recommended-container">
-  <div class="listing">
-    <div class="listing-top">
-      <img src="images/profile1.jpg" alt="User Profile" class="profile-pic" />
-      <div class="user-info">
-        <p class="username">CyclistJoe</p>
-        <p class="time">7 minutes ago</p>
+    <!-- Recommended Section -->
+    <div class="recommended-header">
+      <h2>Recommended For You</h2>
+    </div>
+    <div class="recommended-container">
+      <div class="listing">
+        <div class="listing-top">
+          <img
+            src="images/profile1.jpg"
+            alt="User Profile"
+            class="profile-pic"
+          />
+          <div class="user-info">
+            <p class="username">CyclistJoe</p>
+            <p class="time">7 minutes ago</p>
+          </div>
+        </div>
+        <img
+          src="images/bicycle1.jpg"
+          alt="Product Image"
+          class="listing-img"
+        />
+        <div class="listing-info">
+          <p class="title">Mountain Bicycle</p>
+          <p class="price">S$170</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
+        </div>
+      </div>
+
+      <div class="listing">
+        <div class="listing-top">
+          <img
+            src="images/profile2.jpg"
+            alt="User Profile"
+            class="profile-pic"
+          />
+          <div class="user-info">
+            <p class="username">RideOrDie</p>
+            <p class="time">12 minutes ago</p>
+          </div>
+        </div>
+        <img
+          src="images/bicycle2.jpg"
+          alt="Product Image"
+          class="listing-img"
+        />
+        <div class="listing-info">
+          <p class="title">Road Bicycle</p>
+          <p class="price">S$180</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
+        </div>
+      </div>
+
+      <div class="listing">
+        <div class="listing-top">
+          <img
+            src="images/profile3.jpg"
+            alt="User Profile"
+            class="profile-pic"
+          />
+          <div class="user-info">
+            <p class="username">BikeMaster23</p>
+            <p class="time">20 minutes ago</p>
+          </div>
+        </div>
+        <img
+          src="images/bicycle3.jpg"
+          alt="Product Image"
+          class="listing-img"
+        />
+        <div class="listing-info">
+          <p class="title">City Cruiser Bicycle</p>
+          <p class="price">S$160</p>
+          <p class="condition">Brand New</p>
+          <img src="images/heart.png" class="icon" />
+        </div>
+      </div>
+
+      <div class="listing">
+        <div class="listing-top">
+          <img
+            src="images/profile4.jpg"
+            alt="User Profile"
+            class="profile-pic"
+          />
+          <div class="user-info">
+            <p class="username">UrbanCyclist</p>
+            <p class="time">25 minutes ago</p>
+          </div>
+        </div>
+        <img
+          src="images/bicycle4.jpg"
+          alt="Product Image"
+          class="listing-img"
+        />
+        <div class="listing-info">
+          <p class="title">Hybrid Bicycle</p>
+          <p class="price">S$175</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
+        </div>
+      </div>
+
+      <div class="listing">
+        <div class="listing-top">
+          <img
+            src="images/profile5.jpg"
+            alt="User Profile"
+            class="profile-pic"
+          />
+          <div class="user-info">
+            <p class="username">CycleFanatic</p>
+            <p class="time">30 minutes ago</p>
+          </div>
+        </div>
+        <img
+          src="images/bicycle5.jpg"
+          alt="Product Image"
+          class="listing-img"
+        />
+        <div class="listing-info">
+          <p class="title">BMX Bicycle</p>
+          <p class="price">S$150</p>
+          <p class="condition">Brand New</p>
+          <img src="images/heart.png" class="icon" />
+        </div>
+      </div>
+
+      <div class="listing">
+        <div class="listing-top">
+          <img
+            src="images/profile6.jpg"
+            alt="User Profile"
+            class="profile-pic"
+          />
+          <div class="user-info">
+            <p class="username">PedalPower</p>
+            <p class="time">35 minutes ago</p>
+          </div>
+        </div>
+        <img
+          src="images/bicycle6.jpg"
+          alt="Product Image"
+          class="listing-img"
+        />
+        <div class="listing-info">
+          <p class="title">Mountain Bicycle</p>
+          <p class="price">S$165</p>
+          <p class="condition">Slightly Used</p>
+          <img src="images/heart.png" class="icon" />
+        </div>
+      </div>
+
+      <div class="listing">
+        <div class="listing-top">
+          <img
+            src="images/profile7.jpg"
+            alt="User Profile"
+            class="profile-pic"
+          />
+          <div class="user-info">
+            <p class="username">BikeAddict07</p>
+            <p class="time">40 minutes ago</p>
+          </div>
+        </div>
+        <img
+          src="images/bicycle7.jpg"
+          alt="Product Image"
+          class="listing-img"
+        />
+        <div class="listing-info">
+          <p class="title">Electric Bicycle</p>
+          <p class="price">S$250</p>
+          <p class="condition">Brand New</p>
+          <img src="images/heart.png" class="icon" />
+        </div>
+      </div>
+
+      <div class="listing">
+        <div class="listing-top">
+          <img
+            src="images/profile8.jpg"
+            alt="User Profile"
+            class="profile-pic"
+          />
+          <div class="user-info">
+            <p class="username">RideFast</p>
+            <p class="time">45 minutes ago</p>
+          </div>
+        </div>
+        <img
+          src="images/bicycle8.jpg"
+          alt="Product Image"
+          class="listing-img"
+        />
+        <div class="listing-info">
+          <p class="title">Touring Bicycle</p>
+          <p class="price">S$220</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
+        </div>
+      </div>
+
+      <div class="listing">
+        <div class="listing-top">
+          <img
+            src="images/profile9.jpg"
+            alt="User Profile"
+            class="profile-pic"
+          />
+          <div class="user-info">
+            <p class="username">CycleProX</p>
+            <p class="time">50 minutes ago</p>
+          </div>
+        </div>
+        <img
+          src="images/bicycle9.jpg"
+          alt="Product Image"
+          class="listing-img"
+        />
+        <div class="listing-info">
+          <p class="title">Kids Bicycle</p>
+          <p class="price">S$120</p>
+          <p class="condition">Brand New</p>
+          <img src="images/heart.png" class="icon" />
+        </div>
+      </div>
+
+      <div class="listing">
+        <div class="listing-top">
+          <img
+            src="images/profile10.jpg"
+            alt="User Profile"
+            class="profile-pic"
+          />
+          <div class="user-info">
+            <p class="username">CyclingPro_11</p>
+            <p class="time">55 minutes ago</p>
+          </div>
+        </div>
+        <img
+          src="images/bicycle10.jpg"
+          alt="Product Image"
+          class="listing-img"
+        />
+        <div class="listing-info">
+          <p class="title">Track Bicycle</p>
+          <p class="price">S$200</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
+        </div>
       </div>
     </div>
-    <img src="images/bicycle1.jpg" alt="Product Image" class="listing-img" />
-    <div class="listing-info">
-      <p class="title">Mountain Bicycle</p>
-      <p class="price">S$170</p>
-      <p class="condition">Lightly Used</p>
-      <img src="images/heart.png" class="icon" />
-    </div>
-  </div>
-
-  <div class="listing">
-    <div class="listing-top">
-      <img src="images/profile2.jpg" alt="User Profile" class="profile-pic" />
-      <div class="user-info">
-        <p class="username">RideOrDie</p>
-        <p class="time">12 minutes ago</p>
-      </div>
-    </div>
-    <img src="images/bicycle2.jpg" alt="Product Image" class="listing-img" />
-    <div class="listing-info">
-      <p class="title">Road Bicycle</p>
-      <p class="price">S$180</p>
-      <p class="condition">Lightly Used</p>
-      <img src="images/heart.png" class="icon" />
-    </div>
-  </div>
-
-  <div class="listing">
-    <div class="listing-top">
-      <img src="images/profile3.jpg" alt="User Profile" class="profile-pic" />
-      <div class="user-info">
-        <p class="username">BikeMaster23</p>
-        <p class="time">20 minutes ago</p>
-      </div>
-    </div>
-    <img src="images/bicycle3.jpg" alt="Product Image" class="listing-img" />
-    <div class="listing-info">
-      <p class="title">City Cruiser Bicycle</p>
-      <p class="price">S$160</p>
-      <p class="condition">Brand New</p>
-      <img src="images/heart.png" class="icon" />
-    </div>
-  </div>
-
-  <div class="listing">
-    <div class="listing-top">
-      <img src="images/profile4.jpg" alt="User Profile" class="profile-pic" />
-      <div class="user-info">
-        <p class="username">UrbanCyclist</p>
-        <p class="time">25 minutes ago</p>
-      </div>
-    </div>
-    <img src="images/bicycle4.jpg" alt="Product Image" class="listing-img" />
-    <div class="listing-info">
-      <p class="title">Hybrid Bicycle</p>
-      <p class="price">S$175</p>
-      <p class="condition">Lightly Used</p>
-      <img src="images/heart.png" class="icon" />
-    </div>
-  </div>
-
-  <div class="listing">
-    <div class="listing-top">
-      <img src="images/profile5.jpg" alt="User Profile" class="profile-pic" />
-      <div class="user-info">
-        <p class="username">CycleFanatic</p>
-        <p class="time">30 minutes ago</p>
-      </div>
-    </div>
-    <img src="images/bicycle5.jpg" alt="Product Image" class="listing-img" />
-    <div class="listing-info">
-      <p class="title">BMX Bicycle</p>
-      <p class="price">S$150</p>
-      <p class="condition">Brand New</p>
-      <img src="images/heart.png" class="icon" />
-    </div>
-  </div>
-
-  <div class="listing">
-    <div class="listing-top">
-      <img src="images/profile6.jpg" alt="User Profile" class="profile-pic" />
-      <div class="user-info">
-        <p class="username">PedalPower</p>
-        <p class="time">35 minutes ago</p>
-      </div>
-    </div>
-    <img src="images/bicycle6.jpg" alt="Product Image" class="listing-img" />
-    <div class="listing-info">
-      <p class="title">Mountain Bicycle</p>
-      <p class="price">S$165</p>
-      <p class="condition">Slightly Used</p>
-      <img src="images/heart.png" class="icon" />
-    </div>
-  </div>
-
-  <div class="listing">
-    <div class="listing-top">
-      <img src="images/profile7.jpg" alt="User Profile" class="profile-pic" />
-      <div class="user-info">
-        <p class="username">BikeAddict07</p>
-        <p class="time">40 minutes ago</p>
-      </div>
-    </div>
-    <img src="images/bicycle7.jpg" alt="Product Image" class="listing-img" />
-    <div class="listing-info">
-      <p class="title">Electric Bicycle</p>
-      <p class="price">S$250</p>
-      <p class="condition">Brand New</p>
-      <img src="images/heart.png" class="icon" />
-    </div>
-  </div>
-
-  <div class="listing">
-    <div class="listing-top">
-      <img src="images/profile8.jpg" alt="User Profile" class="profile-pic" />
-      <div class="user-info">
-        <p class="username">RideFast</p>
-        <p class="time">45 minutes ago</p>
-      </div>
-    </div>
-    <img src="images/bicycle8.jpg" alt="Product Image" class="listing-img" />
-    <div class="listing-info">
-      <p class="title">Touring Bicycle</p>
-      <p class="price">S$220</p>
-      <p class="condition">Lightly Used</p>
-      <img src="images/heart.png" class="icon" />
-    </div>
-  </div>
-
-  <div class="listing">
-    <div class="listing-top">
-      <img src="images/profile9.jpg" alt="User Profile" class="profile-pic" />
-      <div class="user-info">
-        <p class="username">CycleProX</p>
-        <p class="time">50 minutes ago</p>
-      </div>
-    </div>
-    <img src="images/bicycle9.jpg" alt="Product Image" class="listing-img" />
-    <div class="listing-info">
-      <p class="title">Kids Bicycle</p>
-      <p class="price">S$120</p>
-      <p class="condition">Brand New</p>
-      <img src="images/heart.png" class="icon" />
-    </div>
-  </div>
-
-  <div class="listing">
-    <div class="listing-top">
-      <img src="images/profile10.jpg" alt="User Profile" class="profile-pic" />
-      <div class="user-info">
-        <p class="username">CyclingPro_11</p>
-        <p class="time">55 minutes ago</p>
-      </div>
-    </div>
-    <img src="images/bicycle10.jpg" alt="Product Image" class="listing-img" />
-    <div class="listing-info">
-      <p class="title">Track Bicycle</p>
-      <p class="price">S$200</p>
-      <p class="condition">Lightly Used</p>
-      <img src="images/heart.png" class="icon" />
-    </div>
-  </div>
-</div>
-
 
     <!-- See More Button for Recommended Section -->
     <div class="see-more-container">
@@ -617,7 +725,7 @@
           <div class="footer-column">
             <h3>Support</h3>
             <ul class="footer-links">
-              <li><a href="#">Help Center</a></li>
+              <li><a href="support.html">Help Center</a></li>
               <li><a href="#">Safety Tips</a></li>
               <li><a href="#">Contact Us</a></li>
               <li><a href="#">Report an Item</a></li>
