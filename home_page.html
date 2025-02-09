@@ -1,685 +1,787 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mokesell - Buy and Sell</title>
     <link rel="stylesheet" href="home_page.css" />
     <script src="home_page.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-</head>
-<body>
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="nav-container">
-          <img src="images/Logo.png" class="nav-logo" alt="Logo">
-          <h1 class="nav-title">Mokesell</h1>
-      
-          <!-- Main Navigation Dropdown Menus -->
-          <div class="nav-dropdowns">
-            <div class="dropdown">
-              <button>Electronics</button>
-              <div class="dropdown-content">
-                <a href="#">Phones</a>
-                <a href="#">Laptops</a>
-                <a href="#">Cameras</a>
-                <a href="#">Accessories</a>
-              </div>
-            </div>
-      
-            <div class="dropdown">
-              <button>Fashion</button>
-              <div class="dropdown-content">
-                <a href="#">Men's Wear</a>
-                <a href="#">Women's Wear</a>
-                <a href="#">Shoes</a>
-                <a href="#">Accessories</a>
-              </div>
-            </div>
-      
-            <div class="dropdown">
-              <button>Services</button>
-              <div class="dropdown-content">
-                <a href="#">Home Cleaning</a>
-                <a href="#">Repair & Maintenance</a>
-                <a href="#">Beauty & Wellness</a>
-                <a href="#">Others</a>
-              </div>
+      <div class="nav-container">
+        <img src="images/Logo.png" class="nav-logo" alt="Logo" />
+        <h1 class="nav-title">Mokesell</h1>
+
+        <!-- Main Navigation Dropdown Menus -->
+        <div class="nav-dropdowns">
+          <div class="dropdown">
+            <button>Electronics</button>
+            <div class="dropdown-content">
+              <a href="#">Phones</a>
+              <a href="#">Laptops</a>
+              <a href="#">Cameras</a>
+              <a href="#">Accessories</a>
             </div>
           </div>
-      
-          <!-- Search Bar -->
-          <div class="search-bar">
-            <input type="text" placeholder="Search...">
-            <button type="submit">🔍</button>
-          </div>
-      
-          <!-- Right Navigation Icon and Filter Panel -->
-          <div class="nav-icons">
-            <div class="filter-icon" onclick="toggleFilter()">
-              <img src="images/Filter.png" alt="Filter Icon">
-              <div id="filterPanel" class="filter-panel">
-                <form>
-                  <!-- Top Buttons -->
-                  <div class="filter-header">
-                    <button type="button" class="filter-btn">Listings near me</button>
-                    <button type="button" class="filter-btn">All of Singapore</button>
-                  </div>
-      
-                  <!-- Search by Heading -->
-                  <h3>Search by</h3>
-      
-                  <!-- Filter Group for MRT -->
-                  <div class="filter-group">
-                    <div class="filter-group-label">MRT</div>
-                    <div class="filter-group-content">
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="admiralty"> Admiralty (NS10)
-                      </label>
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="sembawang"> Sembawang (NS11)
-                      </label>
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="woodlands"> Woodlands (NS9)
-                      </label>
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="yishun"> Yishun (NS13)
-                      </label>
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="khatib"> Khatib (NS14)
-                      </label>
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="yio-chu-kang"> Yio Chu Kang (NS15)
-                      </label>
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="ang-mo-kio"> Ang Mo Kio (NS16)
-                      </label>
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="bishan"> Bishan (NS17)
-                      </label>
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="toa-payoh"> Toa Payoh (NS19)
-                      </label>
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="novena"> Novena (NS20)
-                      </label>
-                    </div>
-                  </div>
-      
-                  <!-- Filter Group for Area -->
-                  <div class="filter-group">
-                    <div class="filter-group-label">Area</div>
-                    <div class="filter-group-content">
-                      <label>
-                        <input type="checkbox" name="area[]" value="ang-mo-kio"> Ang Mo Kio
-                      </label>
-                      <label>
-                        <input type="checkbox" name="area[]" value="bedok"> Bedok
-                      </label>
-                      <label>
-                        <input type="checkbox" name="area[]" value="bishan"> Bishan
-                      </label>
-                      <label>
-                        <input type="checkbox" name="area[]" value="toa-payoh"> Toa Payoh
-                      </label>
-                      <label>
-                        <input type="checkbox" name="area[]" value="jurong-west"> Jurong West
-                      </label>
-                      <label>
-                        <input type="checkbox" name="area[]" value="clementi"> Clementi
-                      </label>
-                      <label>
-                        <input type="checkbox" name="area[]" value="hougang"> Hougang
-                      </label>
-                      <label>
-                        <input type="checkbox" name="area[]" value="tampines"> Tampines
-                      </label>
-                      <label>
-                        <input type="checkbox" name="area[]" value="serangoon"> Serangoon
-                      </label>
-                      <label>
-                        <input type="checkbox" name="area[]" value="bukit-timah"> Bukit Timah
-                      </label>
-                    </div>
-                  </div>
-      
-                  <!-- Filter Group for Neighbourhood -->
-                  <div class="filter-group">
-                    <div class="filter-group-label">Neighbourhood</div>
-                    <div class="filter-group-content">
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="admiralty"> Admiralty
-                      </label>
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="yishun"> Yishun
-                      </label>
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="sembawang"> Sembawang
-                      </label>
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="woodlands"> Woodlands
-                      </label>
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="ang-mo-kio"> Ang Mo Kio
-                      </label>
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="bishan"> Bishan
-                      </label>
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="serangoon"> Serangoon
-                      </label>
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="tiong-bahru"> Tiong Bahru
-                      </label>
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="little-india"> Little India
-                      </label>
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="chinatown"> Chinatown
-                      </label>
-                    </div>
-                  </div>
-      
-                  <!-- Apply Filters Button -->
-                  <button type="submit" class="apply-btn">Apply Filters</button>
-                </form>
-              </div>
+
+          <div class="dropdown">
+            <button>Fashion</button>
+            <div class="dropdown-content">
+              <a href="#">Men's Wear</a>
+              <a href="#">Women's Wear</a>
+              <a href="#">Shoes</a>
+              <a href="#">Accessories</a>
             </div>
-      
-            <!-- Left Navigation Icons -->
-            <div class="left-nav-icons">
-              <img src="images/Profile.png" alt="Left Icon 1">
-              <img src="images/Cart.png" alt="Left Icon 2">
-              <img src="images/Chat.png" alt="Left Icon 3">
+          </div>
+
+          <div class="dropdown">
+            <button>Services</button>
+            <div class="dropdown-content">
+              <a href="#">Home Cleaning</a>
+              <a href="#">Repair & Maintenance</a>
+              <a href="#">Beauty & Wellness</a>
+              <a href="#">Others</a>
             </div>
           </div>
         </div>
-      </nav>
-      
 
+        <!-- Search Bar -->
+        <div class="search-bar">
+          <input type="text" placeholder="Search..." />
+          <button type="submit">🔍</button>
+        </div>
 
-      
-    
+        <!-- Right Navigation Icon and Filter Panel -->
+        <div class="nav-icons">
+          <div class="filter-icon" onclick="toggleFilter()">
+            <img src="images/Filter.png" alt="Filter Icon" />
+            <div id="filterPanel" class="filter-panel">
+              <form>
+                <!-- Top Buttons -->
+                <div class="filter-header">
+                  <button type="button" class="filter-btn">
+                    Listings near me
+                  </button>
+                  <button type="button" class="filter-btn">
+                    All of Singapore
+                  </button>
+                </div>
+
+                <!-- Search by Heading -->
+                <h3>Search by</h3>
+
+                <!-- Filter Group for MRT -->
+                <div class="filter-group">
+                  <div class="filter-group-label">MRT</div>
+                  <div class="filter-group-content">
+                    <label>
+                      <input type="checkbox" name="mrt[]" value="admiralty" />
+                      Admiralty (NS10)
+                    </label>
+                    <label>
+                      <input type="checkbox" name="mrt[]" value="sembawang" />
+                      Sembawang (NS11)
+                    </label>
+                    <label>
+                      <input type="checkbox" name="mrt[]" value="woodlands" />
+                      Woodlands (NS9)
+                    </label>
+                    <label>
+                      <input type="checkbox" name="mrt[]" value="yishun" />
+                      Yishun (NS13)
+                    </label>
+                    <label>
+                      <input type="checkbox" name="mrt[]" value="khatib" />
+                      Khatib (NS14)
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="mrt[]"
+                        value="yio-chu-kang"
+                      />
+                      Yio Chu Kang (NS15)
+                    </label>
+                    <label>
+                      <input type="checkbox" name="mrt[]" value="ang-mo-kio" />
+                      Ang Mo Kio (NS16)
+                    </label>
+                    <label>
+                      <input type="checkbox" name="mrt[]" value="bishan" />
+                      Bishan (NS17)
+                    </label>
+                    <label>
+                      <input type="checkbox" name="mrt[]" value="toa-payoh" />
+                      Toa Payoh (NS19)
+                    </label>
+                    <label>
+                      <input type="checkbox" name="mrt[]" value="novena" />
+                      Novena (NS20)
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Filter Group for Area -->
+                <div class="filter-group">
+                  <div class="filter-group-label">Area</div>
+                  <div class="filter-group-content">
+                    <label>
+                      <input type="checkbox" name="area[]" value="ang-mo-kio" />
+                      Ang Mo Kio
+                    </label>
+                    <label>
+                      <input type="checkbox" name="area[]" value="bedok" />
+                      Bedok
+                    </label>
+                    <label>
+                      <input type="checkbox" name="area[]" value="bishan" />
+                      Bishan
+                    </label>
+                    <label>
+                      <input type="checkbox" name="area[]" value="toa-payoh" />
+                      Toa Payoh
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="area[]"
+                        value="jurong-west"
+                      />
+                      Jurong West
+                    </label>
+                    <label>
+                      <input type="checkbox" name="area[]" value="clementi" />
+                      Clementi
+                    </label>
+                    <label>
+                      <input type="checkbox" name="area[]" value="hougang" />
+                      Hougang
+                    </label>
+                    <label>
+                      <input type="checkbox" name="area[]" value="tampines" />
+                      Tampines
+                    </label>
+                    <label>
+                      <input type="checkbox" name="area[]" value="serangoon" />
+                      Serangoon
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="area[]"
+                        value="bukit-timah"
+                      />
+                      Bukit Timah
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Filter Group for Neighbourhood -->
+                <div class="filter-group">
+                  <div class="filter-group-label">Neighbourhood</div>
+                  <div class="filter-group-content">
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="admiralty"
+                      />
+                      Admiralty
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="yishun"
+                      />
+                      Yishun
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="sembawang"
+                      />
+                      Sembawang
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="woodlands"
+                      />
+                      Woodlands
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="ang-mo-kio"
+                      />
+                      Ang Mo Kio
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="bishan"
+                      />
+                      Bishan
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="serangoon"
+                      />
+                      Serangoon
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="tiong-bahru"
+                      />
+                      Tiong Bahru
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="little-india"
+                      />
+                      Little India
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="chinatown"
+                      />
+                      Chinatown
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Apply Filters Button -->
+                <button type="submit" class="apply-btn">Apply Filters</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Left Navigation Icons -->
+          <div class="left-nav-icons">
+            <img src="images/Profile.png" alt="Left Icon 1" />
+            <img src="images/Cart.png" alt="Left Icon 2" />
+            <img src="images/Chat.png" alt="Left Icon 3" />
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <div class="container">
-        <!-- Two Large Boxes -->
-        <div class="box-container">
-            <div class="box">Box 1</div>
-            <div class="box">Box 2</div>
+      <!-- Two Large Boxes -->
+      <div class="box-container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+      </div>
+
+      <!-- Small Boxes -->
+      <h2>What would you like to buy?</h2>
+      <div class="small-box-container">
+        <div class="small-box">
+          <img src="dog.jpg" alt="Item 1" />
+          <p>Item 1</p>
+        </div>
+        <div class="small-box">
+          <img src="item2.jpg" alt="Item 2" />
+          <p>Item 2</p>
+        </div>
+        <div class="small-box">
+          <img src="item3.jpg" alt="Item 3" />
+          <p>Item 3</p>
+        </div>
+        <div class="small-box">
+          <img src="item4.jpg" alt="Item 4" />
+          <p>Item 4</p>
+        </div>
+        <div class="small-box">
+          <img src="item5.jpg" alt="Item 5" />
+          <p>Item 5</p>
+        </div>
+        <div class="small-box">
+          <img src="item6.jpg" alt="Item 6" />
+          <p>Item 6</p>
+        </div>
+      </div>
+
+      <!-- Trending Now Section -->
+      <div class="trending-header">
+        <h2>Trending Now</h2>
+        <div class="see-more">
+          <span>See More</span>
+          <img src="images/RightArrowHead.png" class="see-more-arrow" />
+        </div>
+      </div>
+      <div class="trending-container">
+        <div class="trending-box">Trending 1</div>
+        <div class="trending-box">Trending 2</div>
+        <div class="trending-box">Trending 3</div>
+        <div class="trending-box">Trending 4</div>
+      </div>
+
+      <!-- Listings Section -->
+      <div class="listing-container">
+        <div class="listing">
+          <div class="listing-top">
+            <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+            <div class="user-info">
+              <p class="username">Username</p>
+              <p class="time">7 minutes ago</p>
+            </div>
+          </div>
+          <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+          <div class="listing-info">
+            <p class="title">Bicycle</p>
+            <p class="price">S$170</p>
+            <p class="condition">Lightly Used</p>
+            <img src="images/heart.png" class="icon" />
+          </div>
         </div>
 
-        <!-- Small Boxes -->
-        <h2>What would you like to buy?</h2>
-        <div class="small-box-container">
-            <div class="small-box">
-                <img src="dog.jpg" alt="Item 1">
-                <p>Item 1</p>
+        <div class="listing">
+          <div class="listing-top">
+            <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+            <div class="user-info">
+              <p class="username">Username</p>
+              <p class="time">7 minutes ago</p>
             </div>
-            <div class="small-box">
-                <img src="item2.jpg" alt="Item 2">
-                <p>Item 2</p>
-            </div>
-            <div class="small-box">
-                <img src="item3.jpg" alt="Item 3">
-                <p>Item 3</p>
-            </div>
-            <div class="small-box">
-                <img src="item4.jpg" alt="Item 4">
-                <p>Item 4</p>
-            </div>
-            <div class="small-box">
-                <img src="item5.jpg" alt="Item 5">
-                <p>Item 5</p>
-            </div>
-            <div class="small-box">
-                <img src="item6.jpg" alt="Item 6">
-                <p>Item 6</p>
-            </div>
+          </div>
+          <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+          <div class="listing-info">
+            <p class="title">Bicycle</p>
+            <p class="price">S$170</p>
+            <p class="condition">Lightly Used</p>
+            <img src="images/heart.png" class="icon" />
+          </div>
         </div>
 
-        <!-- Trending Now Section -->
-        <div class="trending-header">
-            <h2>Trending Now</h2>
-            <div class="see-more">
-                <span>See More</span>
-                <img src="images/RightArrowHead.png"  class="see-more-arrow" />
+        <div class="listing">
+          <div class="listing-top">
+            <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+            <div class="user-info">
+              <p class="username">Username</p>
+              <p class="time">7 minutes ago</p>
             </div>
+          </div>
+          <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+          <div class="listing-info">
+            <p class="title">Bicycle</p>
+            <p class="price">S$170</p>
+            <p class="condition">Lightly Used</p>
+            <img src="images/heart.png" class="icon" />
+          </div>
         </div>
-        <div class="trending-container">
-            <div class="trending-box">Trending 1</div>
-            <div class="trending-box">Trending 2</div>
-            <div class="trending-box">Trending 3</div>
-            <div class="trending-box">Trending 4</div>
+
+        <div class="listing">
+          <div class="listing-top">
+            <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+            <div class="user-info">
+              <p class="username">Username</p>
+              <p class="time">7 minutes ago</p>
+            </div>
+          </div>
+          <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+          <div class="listing-info">
+            <p class="title">Bicycle</p>
+            <p class="price">S$170</p>
+            <p class="condition">Lightly Used</p>
+            <img src="images/heart.png" class="icon" />
+          </div>
         </div>
 
-        <!-- Listings Section -->
-        <div class="listing-container">
-            <div class="listing">
-                <div class="listing-top">
-                    <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                    <div class="user-info">
-                        <p class="username">Username</p>
-                        <p class="time">7 minutes ago</p>
-                    </div>
-                </div>
-                <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-                <div class="listing-info">
-                    <p class="title">Bicycle</p>
-                    <p class="price">S$170</p>
-                    <p class="condition">Lightly Used</p>
-                    <img src="images/heart.png" class="icon" />
-                </div>
+        <div class="listing">
+          <div class="listing-top">
+            <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+            <div class="user-info">
+              <p class="username">Username</p>
+              <p class="time">7 minutes ago</p>
             </div>
-
-            <div class="listing">
-                <div class="listing-top">
-                    <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                    <div class="user-info">
-                        <p class="username">Username</p>
-                        <p class="time">7 minutes ago</p>
-                    </div>
-                </div>
-                <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-                <div class="listing-info">
-                    <p class="title">Bicycle</p>
-                    <p class="price">S$170</p>
-                    <p class="condition">Lightly Used</p>
-                    <img src="images/heart.png" class="icon" />
-                </div>
+          </div>
+          <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+          <div class="listing-info">
+            <p class="title">Bicycle</p>
+            <p class="price">S$170</p>
+            <p class="condition">Lightly Used</p>
+            <img src="images/heart.png" class="icon" />
+            <div class="listing-image-container">
+              <button class="arrow right-arrow" onclick="nextImage()">
+                &#9654;
+              </button>
             </div>
-
-            <div class="listing">
-                <div class="listing-top">
-                    <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                    <div class="user-info">
-                        <p class="username">Username</p>
-                        <p class="time">7 minutes ago</p>
-                    </div>
-                </div>
-                <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-                <div class="listing-info">
-                    <p class="title">Bicycle</p>
-                    <p class="price">S$170</p>
-                    <p class="condition">Lightly Used</p>
-                    <img src="images/heart.png"  class="icon" />
-                </div>
-            </div>
-
-            <div class="listing">
-                <div class="listing-top">
-                    <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                    <div class="user-info">
-                        <p class="username">Username</p>
-                        <p class="time">7 minutes ago</p>
-                    </div>
-                </div>
-                <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-                <div class="listing-info">
-                    <p class="title">Bicycle</p>
-                    <p class="price">S$170</p>
-                    <p class="condition">Lightly Used</p>
-                    <img src="images/heart.png" class="icon" />
-                </div>
-            </div>
-
-            <div class="listing">
-                <div class="listing-top">
-                    <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                    <div class="user-info">
-                        <p class="username">Username</p>
-                        <p class="time">7 minutes ago</p>
-                    </div>
-                </div>
-                <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-                <div class="listing-info">
-                    <p class="title">Bicycle</p>
-                    <p class="price">S$170</p>
-                    <p class="condition">Lightly Used</p>
-                    <img src="images/heart.png" class="icon" />
-                    <div class="listing-image-container">
-                        <button class="arrow right-arrow" onclick="nextImage()">&#9654;</button>
-                      </div>
-                </div>
-            </div>
-
-            
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Recommended Section -->
     <div class="recommended-header">
-        <h2>Recommended For You</h2>
+      <h2>Recommended For You</h2>
     </div>
     <div class="recommended-container">
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
+      <div class="listing">
+        <div class="listing-top">
+          <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+          <div class="user-info">
+            <p class="username">Username</p>
+            <p class="time">7 minutes ago</p>
+          </div>
         </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
+        <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+        <div class="listing-info">
+          <p class="title">Bicycle</p>
+          <p class="price">S$170</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
         </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
+      </div>
+      <div class="listing">
+        <div class="listing-top">
+          <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+          <div class="user-info">
+            <p class="username">Username</p>
+            <p class="time">7 minutes ago</p>
+          </div>
         </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
+        <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+        <div class="listing-info">
+          <p class="title">Bicycle</p>
+          <p class="price">S$170</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
         </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
+      </div>
+      <div class="listing">
+        <div class="listing-top">
+          <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+          <div class="user-info">
+            <p class="username">Username</p>
+            <p class="time">7 minutes ago</p>
+          </div>
         </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
+        <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+        <div class="listing-info">
+          <p class="title">Bicycle</p>
+          <p class="price">S$170</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
         </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
+      </div>
+      <div class="listing">
+        <div class="listing-top">
+          <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+          <div class="user-info">
+            <p class="username">Username</p>
+            <p class="time">7 minutes ago</p>
+          </div>
         </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
+        <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+        <div class="listing-info">
+          <p class="title">Bicycle</p>
+          <p class="price">S$170</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
         </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
+      </div>
+      <div class="listing">
+        <div class="listing-top">
+          <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+          <div class="user-info">
+            <p class="username">Username</p>
+            <p class="time">7 minutes ago</p>
+          </div>
         </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
+        <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+        <div class="listing-info">
+          <p class="title">Bicycle</p>
+          <p class="price">S$170</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
         </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
+      </div>
+      <div class="listing">
+        <div class="listing-top">
+          <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+          <div class="user-info">
+            <p class="username">Username</p>
+            <p class="time">7 minutes ago</p>
+          </div>
         </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
+        <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+        <div class="listing-info">
+          <p class="title">Bicycle</p>
+          <p class="price">S$170</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
         </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
+      </div>
+      <div class="listing">
+        <div class="listing-top">
+          <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+          <div class="user-info">
+            <p class="username">Username</p>
+            <p class="time">7 minutes ago</p>
+          </div>
         </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
+        <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+        <div class="listing-info">
+          <p class="title">Bicycle</p>
+          <p class="price">S$170</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
         </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
+      </div>
+      <div class="listing">
+        <div class="listing-top">
+          <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+          <div class="user-info">
+            <p class="username">Username</p>
+            <p class="time">7 minutes ago</p>
+          </div>
         </div>
+        <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+        <div class="listing-info">
+          <p class="title">Bicycle</p>
+          <p class="price">S$170</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
+        </div>
+      </div>
+      <div class="listing">
+        <div class="listing-top">
+          <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+          <div class="user-info">
+            <p class="username">Username</p>
+            <p class="time">7 minutes ago</p>
+          </div>
+        </div>
+        <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+        <div class="listing-info">
+          <p class="title">Bicycle</p>
+          <p class="price">S$170</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
+        </div>
+      </div>
+      <div class="listing">
+        <div class="listing-top">
+          <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+          <div class="user-info">
+            <p class="username">Username</p>
+            <p class="time">7 minutes ago</p>
+          </div>
+        </div>
+        <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+        <div class="listing-info">
+          <p class="title">Bicycle</p>
+          <p class="price">S$170</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
+        </div>
+      </div>
+      <div class="listing">
+        <div class="listing-top">
+          <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+          <div class="user-info">
+            <p class="username">Username</p>
+            <p class="time">7 minutes ago</p>
+          </div>
+        </div>
+        <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+        <div class="listing-info">
+          <p class="title">Bicycle</p>
+          <p class="price">S$170</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
+        </div>
+      </div>
+      <div class="listing">
+        <div class="listing-top">
+          <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+          <div class="user-info">
+            <p class="username">Username</p>
+            <p class="time">7 minutes ago</p>
+          </div>
+        </div>
+        <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+        <div class="listing-info">
+          <p class="title">Bicycle</p>
+          <p class="price">S$170</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
+        </div>
+      </div>
+      <div class="listing">
+        <div class="listing-top">
+          <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+          <div class="user-info">
+            <p class="username">Username</p>
+            <p class="time">7 minutes ago</p>
+          </div>
+        </div>
+        <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+        <div class="listing-info">
+          <p class="title">Bicycle</p>
+          <p class="price">S$170</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
+        </div>
+      </div>
+      <div class="listing">
+        <div class="listing-top">
+          <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+          <div class="user-info">
+            <p class="username">Username</p>
+            <p class="time">7 minutes ago</p>
+          </div>
+        </div>
+        <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+        <div class="listing-info">
+          <p class="title">Bicycle</p>
+          <p class="price">S$170</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
+        </div>
+      </div>
+      <div class="listing">
+        <div class="listing-top">
+          <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+          <div class="user-info">
+            <p class="username">Username</p>
+            <p class="time">7 minutes ago</p>
+          </div>
+        </div>
+        <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+        <div class="listing-info">
+          <p class="title">Bicycle</p>
+          <p class="price">S$170</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
+        </div>
+      </div>
     </div>
 
-      <!-- See More Button for Recommended Section -->
-  <div class="see-more-container">
-    <button class="see-more-btn">View More</button>
-  </div>
+    <!-- See More Button for Recommended Section -->
+    <div class="see-more-container">
+      <button class="see-more-btn">View More</button>
+    </div>
 
-    <hr class="separator">
+    <hr class="separator" />
 
     <div class="why-container">
-        <h2>Why Choose MokeSell?</h2>
-        <p>
-            At MokeSell, we provide a secure, user-friendly marketplace designed to make buying and selling effortless. Our platform is powered by genuine community feedback, ensuring a trustworthy environment where you can confidently explore a wide range of products. Whether you're searching for brand-new items or high-quality pre-loved goods, MokeSell connects you with reliable sellers, offering great deals and a seamless shopping experience tailored to your needs.        </p>
-      </div>
+      <h2>Why Choose MokeSell?</h2>
+      <p>
+        At MokeSell, we provide a secure, user-friendly marketplace designed to
+        make buying and selling effortless. Our platform is powered by genuine
+        community feedback, ensuring a trustworthy environment where you can
+        confidently explore a wide range of products. Whether you're searching
+        for brand-new items or high-quality pre-loved goods, MokeSell connects
+        you with reliable sellers, offering great deals and a seamless shopping
+        experience tailored to your needs.
+      </p>
+    </div>
 
-      <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-grid">
-                <!-- About & Trust Column -->
-                <div class="footer-column">
-                    <h3>About MokeSell</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Trust & Safety</a></li>
-                        <li><a href="#">Community Guidelines</a></li>
-                        <li><a href="#">Press & Media</a></li>
-                    </ul>
-                </div>
-    
-                <!-- Support Column -->
-                <div class="footer-column">
-                    <h3>Support</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Safety Tips</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Report an Item</a></li>
-                    </ul>
-                </div>
-    
-                <!-- Buying & Selling Column -->
-                <div class="footer-column">
-                    <h3>Buy & Sell</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">How to Sell</a></li>
-                        <li><a href="#">Buyer Protection</a></li>
-                        <li><a href="#">Pricing & Fees</a></li>
-                        <li><a href="#">Shipping Information</a></li>
-                    </ul>
-                </div>
-    
-                <!-- Connect Column -->
-                <div class="footer-column">
-                    <h3>Connect With Us</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Success Stories</a></li>
-                        <li><a href="#">Mobile App</a></li>
-                    </ul>
-                    <div class="footer-social">
-                        <a href="#">Facebook</a>
-                        <a href="#">Instagram</a>
-                        <a href="#">Twitter</a>
-                    </div>
-                </div>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- About & Trust Column -->
+          <div class="footer-column">
+            <h3>About MokeSell</h3>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Trust & Safety</a></li>
+              <li><a href="#">Community Guidelines</a></li>
+              <li><a href="#">Press & Media</a></li>
+            </ul>
+          </div>
+
+          <!-- Support Column -->
+          <div class="footer-column">
+            <h3>Support</h3>
+            <ul class="footer-links">
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Safety Tips</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Report an Item</a></li>
+            </ul>
+          </div>
+
+          <!-- Buying & Selling Column -->
+          <div class="footer-column">
+            <h3>Buy & Sell</h3>
+            <ul class="footer-links">
+              <li><a href="#">How to Sell</a></li>
+              <li><a href="#">Buyer Protection</a></li>
+              <li><a href="#">Pricing & Fees</a></li>
+              <li><a href="#">Shipping Information</a></li>
+            </ul>
+          </div>
+
+          <!-- Connect Column -->
+          <div class="footer-column">
+            <h3>Connect With Us</h3>
+            <ul class="footer-links">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Success Stories</a></li>
+              <li><a href="#">Mobile App</a></li>
+            </ul>
+            <div class="footer-social">
+              <a href="#">Facebook</a>
+              <a href="#">Instagram</a>
+              <a href="#">Twitter</a>
             </div>
-    
-            <!-- Trust Badges -->
-            <div class="trust-badges">
-                <div class="trust-badge">
-                    <span>✓ Secure Payments</span>
-                </div>
-                <div class="trust-badge">
-                    <span>🛡️ Buyer Protection</span>
-                </div>
-                <div class="trust-badge">
-                    <span>👥 Verified Users</span>
-                </div>
-                <div class="trust-badge">
-                    <span>📱 24/7 Support</span>
-                </div>
-            </div>
-    
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <p>© 2025 MokeSell. All rights reserved. Terms of Use • Privacy Policy • Cookie Policy</p>
-            </div>
+          </div>
         </div>
-    </footer>
 
-</body>
+        <!-- Trust Badges -->
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <span>✓ Secure Payments</span>
+          </div>
+          <div class="trust-badge">
+            <span>🛡️ Buyer Protection</span>
+          </div>
+          <div class="trust-badge">
+            <span>👥 Verified Users</span>
+          </div>
+          <div class="trust-badge">
+            <span>📱 24/7 Support</span>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p>
+            © 2025 MokeSell. All rights reserved. Terms of Use • Privacy Policy
+            • Cookie Policy
+          </p>
+        </div>
+      </div>
+    </footer>
+    <div id="gameModal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close" id="closeModal">&times;</span>
+        <!-- T-Rex Game Container -->
+        <div class="game-container" id="game">
+          <div id="trex"></div>
+          <div class="game-over" id="gameOver">Game Over!</div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
