@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile - Mokesell</title>
     <link rel="stylesheet" href="profile_style.css" />
+    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <!-- Make sure the script tag is closed properly -->
+    <script src="profile_app.js" defer></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -56,11 +59,61 @@
         <a href="#">Balance</a>
       </div>
 
-      <!-- Profile Content -->
-      <div class="profile-content">
-        <!-- Dynamic content here -->
+<div class="profile-content">
+  <div class="listing-container">
+    <div class="listing">
+      <div class="listing-top">
+          <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
+          <div class="user-info">
+              <p class="username">Username</p>
+              <p class="time">7 minutes ago</p>
+          </div>
+      </div>
+      <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
+      <div class="listing-info">
+          <p class="title">Bicycle</p>
+          <p class="price">S$170</p>
+          <p class="condition">Lightly Used</p>
+          <img src="images/heart.png" class="icon" />
+      </div>
+  </div>
+    
+  </div>
+</div>
+
+
+    <!-- Profile Icons Section -->
+    <div class="profile-icons">
+      <!-- Add an id "sellBtn" so we can target this link in JS -->
+      <a href="#" id="sellBtn"><img src="images/Add.png" class="icon" />Add</a>
+      <a href="#">Manage Listings</a>
+    </div>
+
+    <!-- Sell Modal -->
+    <div id="sellModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Create a New Listing</h3>
+        <form id="sellForm" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="itemimage">Item Image:</label>
+            <input type="file" id="itemimage" name="itemimage" accept="image/*" required />
+          </div>
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea
+              id="description"
+              name="description"
+              rows="4"
+              placeholder="Enter a description..."
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit">List Item</button>
+          </div>
+        </form>
       </div>
     </div>
-    <script src="profile_app.js"></script>
   </body>
 </html>
