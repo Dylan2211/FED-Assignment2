@@ -27,3 +27,4 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("gameRedirectModal").style.display = "none";
     });
 });
+
