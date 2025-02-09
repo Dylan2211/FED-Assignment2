@@ -6,3 +6,8 @@
       panel.style.display = "block";
     }
   }
+
+
+  function goToPage(url) {
+    window.location.href = url;
+}

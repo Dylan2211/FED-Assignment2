@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mokesell - Buy and Sell</title>
-    <link rel="stylesheet" href="home_page.css" />
-    <script src="home_page.js"></script>
+    <link rel="stylesheet" href="phone.css" />
+    <script src="phone.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
@@ -188,10 +188,10 @@
       
             <!-- Left Navigation Icons -->
             <div class="left-nav-icons">
-                <img src="images/Profile.png" alt="Left Icon 1" onclick="goToPage('profile.html')">
-                <img src="images/Cart.png" alt="Left Icon 2" onclick="goToPage('cart.html')">
-                <img src="images/Chat.png" alt="Left Icon 3" onclick="goToPage('chat.html')">
-              </div>              
+                <img src="images/Profile.png" alt="Profile Icon" onclick="goToPage('profile.html')">
+                <img src="images/Cart.png" alt="Cart Icon" onclick="goToPage('cart.html')">
+                <img src="images/Chat.png" alt="Chat Icon" onclick="goToPage('chat.html')">
+            </div>
           </div>
         </div>
       </nav>
@@ -201,56 +201,79 @@
       
     
 
-    <div class="container">
-        <!-- Two Large Boxes -->
-        <div class="box-container">
-            <div class="box">Box 1</div>
-            <div class="box">Box 2</div>
-        </div>
 
-        <!-- Small Boxes -->
-        <h2>What would you like to buy?</h2>
-        <div class="small-box-container">
-            <div class="small-box">
-                <img src="dog.jpg" alt="Item 1">
-                <p>Item 1</p>
-            </div>
-            <div class="small-box">
-                <img src="item2.jpg" alt="Item 2">
-                <p>Item 2</p>
-            </div>
-            <div class="small-box">
-                <img src="item3.jpg" alt="Item 3">
-                <p>Item 3</p>
-            </div>
-            <div class="small-box">
-                <img src="item4.jpg" alt="Item 4">
-                <p>Item 4</p>
-            </div>
-            <div class="small-box">
-                <img src="item5.jpg" alt="Item 5">
-                <p>Item 5</p>
-            </div>
-            <div class="small-box">
-                <img src="item6.jpg" alt="Item 6">
-                <p>Item 6</p>
-            </div>
-        </div>
 
-        <!-- Trending Now Section -->
-        <div class="trending-header">
-            <h2>Trending Now</h2>
-            <div class="see-more">
-                <span>See More</span>
-                <img src="images/RightArrowHead.png"  class="see-more-arrow" />
+<!-- Modified Trending Now Section -->
+<div class="trending-section">
+    <div class="trending-header container">
+        <h2>Trending Now</h2>
+        <div class="trending-filters">
+            <!-- Sort Filter -->
+            <div class="trending-filter">
+                <button class="filter-btn">Sort: Best Match ▼</button>
+                <div class="filter-dropdown">
+                    <a href="#">Best Match</a>
+                    <a href="#">Recent</a>
+                    <a href="#">Price - High to Low</a>
+                    <a href="#">Price - Low to High</a>
+                    <a href="#">Nearby</a>
+                </div>
+            </div>
+            
+            <!-- Delivery Filter -->
+            <div class="trending-filter">
+                <button class="filter-btn">Delivery ▼</button>
+                <div class="filter-dropdown">
+                    <a href="#">Standard</a>
+                    <a href="#">Express</a>
+                    <a href="#">Pickup</a>
+                </div>
+            </div>
+
+            <!-- Brand Filter -->
+            <div class="trending-filter">
+                <button class="filter-btn">Brand ▼</button>
+                <div class="filter-dropdown">
+                    <a href="#">Apple</a>
+                    <a href="#">Corsair</a>
+                    <a href="#">Cooler Master</a>
+                    <a href="#">Asus</a>
+                    <a href="#">Logitech</a>
+                    <a href="#">Razer</a>
+                </div>
+            </div>
+
+            <!-- Condition Filter -->
+            <div class="trending-filter">
+                <button class="filter-btn">Condition ▼</button>
+                <div class="filter-dropdown">
+                    <a href="#">Brand New</a>
+                    <a href="#">Like New</a>
+                    <a href="#">Lightly Used</a>
+                    <a href="#">Well Used</a>
+                    <a href="#">Heavily Used</a>
+                </div>
+            </div>
+
+            <!-- Price Filter -->
+            <div class="trending-filter">
+                <button class="filter-btn">Price ▼</button>
+                <div class="filter-dropdown price-filter">
+                    <div class="price-inputs">
+                        <input type="number" placeholder="Min" class="price-input">
+                        <span>-</span>
+                        <input type="number" placeholder="Max" class="price-input">
+                    </div>
+                    <button class="apply-price">Apply</button>
+                </div>
             </div>
         </div>
-        <div class="trending-container">
-            <div class="trending-box">Trending 1</div>
-            <div class="trending-box">Trending 2</div>
-            <div class="trending-box">Trending 3</div>
-            <div class="trending-box">Trending 4</div>
+        <div class="see-more">
+            <span>See More</span>
+            <img src="images/RightArrowHead.png" class="see-more-arrow" />
         </div>
+    </div>
+
 
         <!-- Listings Section -->
         <div class="listing-container">
@@ -336,264 +359,12 @@
                     <p class="price">S$170</p>
                     <p class="condition">Lightly Used</p>
                     <img src="images/heart.png" class="icon" />
-                    <div class="listing-image-container">
-                        <button class="arrow right-arrow" onclick="nextImage()">&#9654;</button>
-                      </div>
-                </div>
-            </div>
 
-            
-        </div>
-    </div>
-
-    <!-- Recommended Section -->
-    <div class="recommended-header">
-        <h2>Recommended For You</h2>
-    </div>
-    <div class="recommended-container">
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
                 </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
-        </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
-        </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
-        </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
-        </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
-        </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
-        </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
-        </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
-        </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
-        </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
-        </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
-        </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
-        </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
-        </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
-            </div>
-        </div>
-        <div class="listing">
-            <div class="listing-top">
-                <img src="images/dog.jpg" alt="User Profile" class="profile-pic" />
-                <div class="user-info">
-                    <p class="username">Username</p>
-                    <p class="time">7 minutes ago</p>
-                </div>
-            </div>
-            <img src="images/dog.jpg" alt="Product Image" class="listing-img" />
-            <div class="listing-info">
-                <p class="title">Bicycle</p>
-                <p class="price">S$170</p>
-                <p class="condition">Lightly Used</p>
-                <img src="images/heart.png" class="icon" />
             </div>
         </div>
     </div>
 
-      <!-- See More Button for Recommended Section -->
   <div class="see-more-container">
     <button class="see-more-btn">View More</button>
   </div>
