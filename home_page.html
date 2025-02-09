@@ -13,195 +13,276 @@
   </head>
   <body>
     <nav class="navbar">
-        <div class="nav-container">
-          <img src="images/Logo.png" class="nav-logo" alt="Logo">
-          <h1 class="nav-title">Mokesell</h1>
-      
-          <!-- Main Navigation Dropdown Menus -->
-          <div class="nav-dropdowns">
-            <div class="dropdown">
-              <button>Electronics</button>
-              <div class="dropdown-content">
-                <a href="#">Phones</a>
-                <a href="#">Laptops</a>
-                <a href="#">Cameras</a>
-                <a href="#">Accessories</a>
-              </div>
-            </div>
-      
-            <div class="dropdown">
-              <button>Fashion</button>
-              <div class="dropdown-content">
-                <a href="#">Men's Wear</a>
-                <a href="#">Women's Wear</a>
-                <a href="#">Shoes</a>
-                <a href="#">Accessories</a>
-              </div>
-            </div>
-      
-            <div class="dropdown">
-              <button>Services</button>
-              <div class="dropdown-content">
-                <a href="#">Home Cleaning</a>
-                <a href="#">Repair & Maintenance</a>
-                <a href="#">Beauty & Wellness</a>
-                <a href="#">Others</a>
-              </div>
+      <div class="nav-container">
+        <img src="images/Logo.png" class="nav-logo" alt="Logo" />
+        <h1 class="nav-title">Mokesell</h1>
+
+        <!-- Main Navigation Dropdown Menus -->
+        <div class="nav-dropdowns">
+          <div class="dropdown">
+            <button>Electronics</button>
+            <div class="dropdown-content">
+              <a href="#">Phones</a>
+              <a href="#">Laptops</a>
+              <a href="#">Cameras</a>
+              <a href="#">Accessories</a>
             </div>
           </div>
-      
-          <!-- Search Bar -->
-          <div class="search-bar">
-            <input type="text" placeholder="Search...">
-            <button type="submit">🔍</button>
-          </div>
-      
-          <!-- Right Navigation Icon and Filter Panel -->
-          <div class="nav-icons">
-            <div class="filter-icon" onclick="toggleFilter()">
-              <img src="images/Filter.png" alt="Filter Icon">
-              <div id="filterPanel" class="filter-panel">
-                <form>
-                  <!-- Top Buttons -->
-                  <div class="filter-header">
-                    <button type="button" class="filter-btn">Listings near me</button>
-                    <button type="button" class="filter-btn">All of Singapore</button>
-                  </div>
-      
-                  <!-- Search by Heading -->
-                  <h3>Search by</h3>
-      
-                  <!-- Filter Group for MRT -->
-                  <div class="filter-group">
-                    <div class="filter-group-label">MRT</div>
-                    <div class="filter-group-content">
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="admiralty"> Admiralty (NS10)
-                      </label>
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="sembawang"> Sembawang (NS11)
-                      </label>
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="woodlands"> Woodlands (NS9)
-                      </label>
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="yishun"> Yishun (NS13)
-                      </label>
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="khatib"> Khatib (NS14)
-                      </label>
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="yio-chu-kang"> Yio Chu Kang (NS15)
-                      </label>
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="ang-mo-kio"> Ang Mo Kio (NS16)
-                      </label>
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="bishan"> Bishan (NS17)
-                      </label>
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="toa-payoh"> Toa Payoh (NS19)
-                      </label>
-                      <label>
-                        <input type="checkbox" name="mrt[]" value="novena"> Novena (NS20)
-                      </label>
-                    </div>
-                  </div>
-      
-                  <!-- Filter Group for Area -->
-                  <div class="filter-group">
-                    <div class="filter-group-label">Area</div>
-                    <div class="filter-group-content">
-                      <label>
-                        <input type="checkbox" name="area[]" value="ang-mo-kio"> Ang Mo Kio
-                      </label>
-                      <label>
-                        <input type="checkbox" name="area[]" value="bedok"> Bedok
-                      </label>
-                      <label>
-                        <input type="checkbox" name="area[]" value="bishan"> Bishan
-                      </label>
-                      <label>
-                        <input type="checkbox" name="area[]" value="toa-payoh"> Toa Payoh
-                      </label>
-                      <label>
-                        <input type="checkbox" name="area[]" value="jurong-west"> Jurong West
-                      </label>
-                      <label>
-                        <input type="checkbox" name="area[]" value="clementi"> Clementi
-                      </label>
-                      <label>
-                        <input type="checkbox" name="area[]" value="hougang"> Hougang
-                      </label>
-                      <label>
-                        <input type="checkbox" name="area[]" value="tampines"> Tampines
-                      </label>
-                      <label>
-                        <input type="checkbox" name="area[]" value="serangoon"> Serangoon
-                      </label>
-                      <label>
-                        <input type="checkbox" name="area[]" value="bukit-timah"> Bukit Timah
-                      </label>
-                    </div>
-                  </div>
-      
-                  <!-- Filter Group for Neighbourhood -->
-                  <div class="filter-group">
-                    <div class="filter-group-label">Neighbourhood</div>
-                    <div class="filter-group-content">
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="admiralty"> Admiralty
-                      </label>
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="yishun"> Yishun
-                      </label>
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="sembawang"> Sembawang
-                      </label>
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="woodlands"> Woodlands
-                      </label>
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="ang-mo-kio"> Ang Mo Kio
-                      </label>
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="bishan"> Bishan
-                      </label>
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="serangoon"> Serangoon
-                      </label>
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="tiong-bahru"> Tiong Bahru
-                      </label>
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="little-india"> Little India
-                      </label>
-                      <label>
-                        <input type="checkbox" name="neighbourhood[]" value="chinatown"> Chinatown
-                      </label>
-                    </div>
-                  </div>
-      
-                  <!-- Apply Filters Button -->
-                  <button type="submit" class="apply-btn">Apply Filters</button>
-                </form>
-              </div>
+
+          <div class="dropdown">
+            <button>Fashion</button>
+            <div class="dropdown-content">
+              <a href="#">Men's Wear</a>
+              <a href="#">Women's Wear</a>
+              <a href="#">Shoes</a>
+              <a href="#">Accessories</a>
             </div>
-      
-            <!-- Left Navigation Icons -->
-            <div class="left-nav-icons">
-              <img src="images/Profile.png" alt="Left Icon 1">
-              <img src="images/Cart.png" alt="Left Icon 2">
-              <img src="images/Chat.png" alt="Left Icon 3">
+          </div>
+
+          <div class="dropdown">
+            <button>Services</button>
+            <div class="dropdown-content">
+              <a href="#">Home Cleaning</a>
+              <a href="#">Repair & Maintenance</a>
+              <a href="#">Beauty & Wellness</a>
+              <a href="#">Others</a>
             </div>
           </div>
         </div>
-      </nav>
-      
 
+        <!-- Search Bar -->
+        <div class="search-bar">
+          <input type="text" placeholder="Search..." />
+          <button type="submit">🔍</button>
+        </div>
 
-      
-    
+        <!-- Right Navigation Icon and Filter Panel -->
+        <div class="nav-icons">
+          <div class="filter-icon" onclick="toggleFilter()">
+            <img src="images/Filter.png" alt="Filter Icon" />
+            <div id="filterPanel" class="filter-panel">
+              <form>
+                <!-- Top Buttons -->
+                <div class="filter-header">
+                  <button type="button" class="filter-btn">
+                    Listings near me
+                  </button>
+                  <button type="button" class="filter-btn">
+                    All of Singapore
+                  </button>
+                </div>
+
+                <!-- Search by Heading -->
+                <h3>Search by</h3>
+
+                <!-- Filter Group for MRT -->
+                <div class="filter-group">
+                  <div class="filter-group-label">MRT</div>
+                  <div class="filter-group-content">
+                    <label>
+                      <input type="checkbox" name="mrt[]" value="admiralty" />
+                      Admiralty (NS10)
+                    </label>
+                    <label>
+                      <input type="checkbox" name="mrt[]" value="sembawang" />
+                      Sembawang (NS11)
+                    </label>
+                    <label>
+                      <input type="checkbox" name="mrt[]" value="woodlands" />
+                      Woodlands (NS9)
+                    </label>
+                    <label>
+                      <input type="checkbox" name="mrt[]" value="yishun" />
+                      Yishun (NS13)
+                    </label>
+                    <label>
+                      <input type="checkbox" name="mrt[]" value="khatib" />
+                      Khatib (NS14)
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="mrt[]"
+                        value="yio-chu-kang"
+                      />
+                      Yio Chu Kang (NS15)
+                    </label>
+                    <label>
+                      <input type="checkbox" name="mrt[]" value="ang-mo-kio" />
+                      Ang Mo Kio (NS16)
+                    </label>
+                    <label>
+                      <input type="checkbox" name="mrt[]" value="bishan" />
+                      Bishan (NS17)
+                    </label>
+                    <label>
+                      <input type="checkbox" name="mrt[]" value="toa-payoh" />
+                      Toa Payoh (NS19)
+                    </label>
+                    <label>
+                      <input type="checkbox" name="mrt[]" value="novena" />
+                      Novena (NS20)
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Filter Group for Area -->
+                <div class="filter-group">
+                  <div class="filter-group-label">Area</div>
+                  <div class="filter-group-content">
+                    <label>
+                      <input type="checkbox" name="area[]" value="ang-mo-kio" />
+                      Ang Mo Kio
+                    </label>
+                    <label>
+                      <input type="checkbox" name="area[]" value="bedok" />
+                      Bedok
+                    </label>
+                    <label>
+                      <input type="checkbox" name="area[]" value="bishan" />
+                      Bishan
+                    </label>
+                    <label>
+                      <input type="checkbox" name="area[]" value="toa-payoh" />
+                      Toa Payoh
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="area[]"
+                        value="jurong-west"
+                      />
+                      Jurong West
+                    </label>
+                    <label>
+                      <input type="checkbox" name="area[]" value="clementi" />
+                      Clementi
+                    </label>
+                    <label>
+                      <input type="checkbox" name="area[]" value="hougang" />
+                      Hougang
+                    </label>
+                    <label>
+                      <input type="checkbox" name="area[]" value="tampines" />
+                      Tampines
+                    </label>
+                    <label>
+                      <input type="checkbox" name="area[]" value="serangoon" />
+                      Serangoon
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="area[]"
+                        value="bukit-timah"
+                      />
+                      Bukit Timah
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Filter Group for Neighbourhood -->
+                <div class="filter-group">
+                  <div class="filter-group-label">Neighbourhood</div>
+                  <div class="filter-group-content">
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="admiralty"
+                      />
+                      Admiralty
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="yishun"
+                      />
+                      Yishun
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="sembawang"
+                      />
+                      Sembawang
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="woodlands"
+                      />
+                      Woodlands
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="ang-mo-kio"
+                      />
+                      Ang Mo Kio
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="bishan"
+                      />
+                      Bishan
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="serangoon"
+                      />
+                      Serangoon
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="tiong-bahru"
+                      />
+                      Tiong Bahru
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="little-india"
+                      />
+                      Little India
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="neighbourhood[]"
+                        value="chinatown"
+                      />
+                      Chinatown
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Apply Filters Button -->
+                <button type="submit" class="apply-btn">Apply Filters</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Left Navigation Icons -->
+          <div class="left-nav-icons">
+            <img src="images/Profile.png" alt="Left Icon 1" />
+            <img src="images/Cart.png" alt="Left Icon 2" />
+            <img src="images/Chat.png" alt="Left Icon 3" />
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <div class="container">
       <!-- Two Large Boxes -->
@@ -692,14 +773,36 @@
         </div>
       </div>
     </footer>
-    <div id="gameModal" class="modal">
+    <!-- <div id="gameModal" class="modal">
       <div class="modal-content">
         <span class="modal-close" id="closeModal">&times;</span>
-        <!-- T-Rex Game Container -->
         <div class="game-container" id="game">
           <div id="trex"></div>
           <div class="game-over" id="gameOver">Game Over!</div>
         </div>
+      </div>
+    </div> -->
+    <!-- Modal for Game Redirect -->
+    <div id="gameRedirectModal" class="modal">
+      <div class="modal-content">
+        <p style="font-size: 18px; margin-bottom: 20px">Play the T‑Rex Game?</p>
+        <button
+          id="playGameButton"
+          style="padding: 10px 20px; font-size: 16px; cursor: pointer"
+        >
+          Play
+        </button>
+        <button
+          id="closeRedirectModal"
+          style="
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+          "
+        >
+          Close
+        </button>
       </div>
     </div>
   </body>
