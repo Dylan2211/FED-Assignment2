@@ -1,17 +1,39 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function() {
   /* -------------------------------
      Modal & Popup Logic for the Game
      ------------------------------- */
-  // Function to show the game modal (this function can also reset game variables if needed)
+  // Function to reset game variables and restart the loops
+  function resetGame() {
+    // Reset game state variables
+    gameOver = false;
+    spawnRate = 2500;
+    gameSpeed = 5;
+    position = 0;
+    velocity = 0;
+    jumpCount = 0;
+    lastTime = null;
+    trex.style.bottom = "0px";
+    gameOverText.style.display = "none";
+
+    // Remove any existing obstacles
+    const obstacles = gameContainer.querySelectorAll(".cactus");
+    obstacles.forEach(obs => obs.remove());
+
+    // Restart the update and spawn loops
+    requestAnimationFrame(update);
+    setTimeout(spawnSpears, spawnRate);
+  }
+
+  // Function to show the game modal (and reset the game)
   function showGameModal() {
-    // (Optional: Reset game variables here for a fresh session)
+    resetGame();
     document.getElementById("gameModal").style.display = "block";
   }
 
   // Attach the close event to the close button
   const closeModal = document.getElementById("closeModal");
   if (closeModal) {
-    closeModal.addEventListener("click", function () {
+    closeModal.addEventListener("click", function() {
       document.getElementById("gameModal").style.display = "none";
     });
   }
@@ -22,13 +44,13 @@ document.addEventListener("DOMContentLoaded", function () {
   /* -------------------------------
      T-Rex Game Code
      ------------------------------- */
-  let spawnRate = 2500; // Initial spawn interval (ms)
-  let minSpawnRate = 500; // Minimum interval between spawns (ms)
-  let spawnDecreaseRate = 10; // Decrease (ms) per spawn
+  let spawnRate = 2500;         // Initial spawn interval (ms)
+  let minSpawnRate = 500;       // Minimum interval between spawns (ms)
+  let spawnDecreaseRate = 10;   // Decrease (ms) per spawn
 
-  let gameSpeed = 5; // Initial game speed (pixels per frame)
+  let gameSpeed = 5;            // Initial game speed (pixels per frame)
   let speedIncreaseRate = 0.0015; // Increase per frame
-  let maxSpeed = 15; // Maximum game speed
+  let maxSpeed = 15;            // Maximum game speed
 
   // Get elements for the game (inside the modal)
   const trex = document.getElementById("trex");
@@ -36,14 +58,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const gameOverText = document.getElementById("gameOver");
 
   // Physics & jump variables
-  let position = 0; // Vertical position (in pixels)
-  let velocity = 0; // Vertical velocity (pixels per second)
+  let position = 0;   // Vertical position (in pixels)
+  let velocity = 0;   // Vertical velocity (pixels per second)
   let jumpCount = 0;
   const maxJumps = 2; // Allow a double jump
 
   // Jump and gravity settings
   const JUMP_VELOCITY = 780; // Jump velocity (pixels/second)
-  const GRAVITY_UP = -2700; // Gravity while ascending
+  const GRAVITY_UP = -2700;  // Gravity while ascending
   const GRAVITY_DOWN = -3200; // Gravity while descending
 
   let lastTime = null;
@@ -104,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
       top: trexRect.top + hitboxPadding.top,
       bottom: trexRect.bottom - hitboxPadding.bottom,
       left: trexRect.left + hitboxPadding.left,
-      right: trexRect.right - hitboxPadding.right,
+      right: trexRect.right - hitboxPadding.right
     };
 
     return (
@@ -137,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
         clearInterval(cactusInterval);
         if (cactus.parentNode) gameContainer.removeChild(cactus);
       } else {
-        cactus.style.left = cactusLeft - gameSpeed + "px";
+        cactus.style.left = (cactusLeft - gameSpeed) + "px";
         if (checkCollision(trex, cactus)) {
           gameOver = true;
           gameOverText.style.display = "block";
@@ -172,36 +194,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!gameOver) animateTrex();
   }, frameInterval);
 
-// Gradually increase game speed
-function gameLoop() {
-  if (gameOver) return;
-  if (gameSpeed < maxSpeed) gameSpeed += speedIncreaseRate;
-  requestAnimationFrame(gameLoop);
-}
-gameLoop();
-
-/* -------------------------------
-            Modal & Popup Logic for the Game
-            ------------------------------- */
-// Function to display the game modal and (optionally) reset game variables
-function showGameModal() {
-  // Reset game variables for a new session (optional)
-  gameOver = false;
-  position = 0;
-  velocity = 0;
-  jumpCount = 0;
-  trex.style.bottom = "0px";
-  gameOverText.style.display = "none";
-  // Optionally reset spawnRate and gameSpeed here:
-  // spawnRate = 2500;
-  // gameSpeed = 5;
-  document.getElementById("gameModal").style.display = "block";
-}
-
-// Close modal when the close button is clicked
-document.getElementById("closeModal").addEventListener("click", () => {
-  document.getElementById("gameModal").style.display = "none";
+  // Gradually increase game speed
+  function gameLoop() {
+    if (gameOver) return;
+    if (gameSpeed < maxSpeed) gameSpeed += speedIncreaseRate;
+    requestAnimationFrame(gameLoop);
+  }
+  gameLoop();
 });
-
-// Automatically show the game modal every 90 seconds (90,000 ms)
-setInterval(showGameModal, 90000);
