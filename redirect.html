@@ -26,17 +26,34 @@
     ></lottie-player>
 
     <script>
+      // Retrieve the user's email from the URL query parameters (if it exists)
+      const urlParams = new URLSearchParams(window.location.search);
+      const userEmail = urlParams.get("email");
+
+      // Log to console for debugging
+      console.log("Redirect Page - Retrieved Email:", userEmail);
+      // Optional: Show an alert for debugging
+      if (!userEmail) {
+        alert("No email found in URL. Check login process.");
+      }
+      // Construct the URL to which we'll redirect.
+      // If the email exists, append it as a query parameter.
+      const redirectUrl =
+        "profile.html" +
+        (userEmail ? "?email=" + encodeURIComponent(userEmail) : "");
+
       const animation = document.getElementById("animation");
 
-      // Wait for the animation to complete before redirecting
+      // Listen for the animation complete event.
       animation.addEventListener("complete", () => {
-        window.location.href = "profile.html";
+        window.location.href = redirectUrl;
       });
 
-      // If the animation loops, set a manual timeout instead (e.g., 3 seconds)
+      // Fallback: In case the animation loops or the complete event isn't triggered,
+      // use a timeout (e.g., 3 seconds) to redirect.
       setTimeout(() => {
-        window.location.href = "profile.html";
-      }, 3000); // Adjust delay as needed
+        window.location.href = redirectUrl;
+      }, 3000); // Adjust delay as needed based on your animation length.
     </script>
   </body>
 </html>

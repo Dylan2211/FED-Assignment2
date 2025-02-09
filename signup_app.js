@@ -55,7 +55,7 @@ form.addEventListener("submit", async (e) => {
     console.log("Account created:", data);
 
     // Redirect to the Lottie animation page.
-    window.location.href = "redirect.html";
+    window.location.href = "redirect.html?email=" + encodeURIComponent(email);
   } catch (error) {
     console.error("Signup error:", error);
     alert("An error occurred during account creation: " + error.message);
