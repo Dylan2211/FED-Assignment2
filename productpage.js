@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const rightArrow = document.querySelector('.right-arrow');
 
     const images = [
-        'images/bicycle1.jpg',
-        'images/bicycle2.jpg',
-        'images/bicycle3.jpg',
-        'images/bicycle4.jpg'
+        'images/product1.jpg',
+        'images/product2.jpg',
+        'images/product3.jpg',
+        'images/product4.jpg'
     ];
 
     let currentImageIndex = 0;
