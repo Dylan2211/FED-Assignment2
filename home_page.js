@@ -1,3 +1,11 @@
+function toggleFilter() {
+  var panel = document.getElementById("filterPanel");
+  if (panel.style.display === "block") {
+    panel.style.display = "none";
+  } else {
+    panel.style.display = "block";
+  }
+}
 document.addEventListener("DOMContentLoaded", function () {
   // Function to show the redirect modal
   function showRedirectModal() {
