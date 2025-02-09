@@ -396,7 +396,7 @@ body {
 
 .listing-img {
   width: 210px;
-  height: 250px;
+  height: 210px;
   object-fit: cover;
   border-radius: 8px;
 }
