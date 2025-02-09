@@ -42,7 +42,15 @@
         background: linear-gradient(to top, #525252, #ababab);
         border-radius: 2px;
         /* Create a spearhead shape */
-        clip-path: polygon(50% 0%, 100% 30%, 75% 30%, 75% 100%, 25% 100%, 25% 30%, 0% 30%);
+        clip-path: polygon(
+          50% 0%,
+          100% 30%,
+          75% 30%,
+          75% 100%,
+          25% 100%,
+          25% 30%,
+          0% 30%
+        );
       }
       /* Game over text */
       .game-over {
@@ -66,27 +74,27 @@
       /* -------------------------------
          Global Variables & DOM Elements
       ------------------------------- */
-      let spawnRate = 1000;         // Initial spawn interval (ms)
-      let minSpawnRate = 100;       // Minimum interval between spawns (ms)
-      let spawnDecreaseRate = 20;   // How much the interval decreases per spawn (ms)
+      let spawnRate = 1000; // Initial spawn interval (ms)
+      let minSpawnRate = 100; // Minimum interval between spawns (ms)
+      let spawnDecreaseRate = 20; // How much the interval decreases per spawn (ms)
 
-      let gameSpeed = 5;            // Initial game speed (pixels per frame)
+      let gameSpeed = 5; // Initial game speed (pixels per frame)
       let speedIncreaseRate = 0.0025; // Increase in gameSpeed per frame
-      let maxSpeed = 15;            // Maximum game speed
+      let maxSpeed = 15; // Maximum game speed
 
       const trex = document.getElementById("trex");
       const gameContainer = document.getElementById("game");
       const gameOverText = document.getElementById("gameOver");
 
       // Physics & jump variables
-      let position = 0;   // Vertical position in pixels
-      let velocity = 0;   // Vertical velocity (pixels per second, upward is positive)
+      let position = 0; // Vertical position in pixels
+      let velocity = 0; // Vertical velocity (pixels per second, upward is positive)
       let jumpCount = 0;
       const maxJumps = 2; // Allow a double jump
- 
+
       // Jump and gravity settings (tuned for your game)
       const JUMP_VELOCITY = 680; // Initial jump velocity (pixels/second)
-      const GRAVITY_UP = -1300;  // Gravity while ascending
+      const GRAVITY_UP = -1300; // Gravity while ascending
       const GRAVITY_DOWN = -3400; // Gravity while descending
 
       let lastTime = null;
@@ -156,14 +164,14 @@
           top: 5,
           bottom: 10,
           left: 8,
-          right: 8
+          right: 8,
         };
 
         const trexHitbox = {
           top: trexRect.top + hitboxPadding.top,
           bottom: trexRect.bottom - hitboxPadding.bottom,
           left: trexRect.left + hitboxPadding.left,
-          right: trexRect.right - hitboxPadding.right
+          right: trexRect.right - hitboxPadding.right,
         };
 
         return (
@@ -204,7 +212,7 @@
               gameContainer.removeChild(cactus);
             }
           } else {
-            cactus.style.left = (cactusLeft - gameSpeed) + "px";
+            cactus.style.left = cactusLeft - gameSpeed + "px";
             if (checkCollision(trex, cactus)) {
               gameOver = true;
               gameOverText.style.display = "block";
@@ -229,9 +237,9 @@
          T-Rex Animation (8 Frames)
       ------------------------------- */
       let frameIndex = 0;
-      const totalFrames = 8;      // 8 frames in the sprite sheet
-      const frameWidth = 60;      // Each frame is 60px wide
-      const frameInterval = 100;  // Frame update interval (ms)
+      const totalFrames = 8; // 8 frames in the sprite sheet
+      const frameWidth = 60; // Each frame is 60px wide
+      const frameInterval = 100; // Frame update interval (ms)
 
       function animateTrex() {
         if (velocity === 0) {
