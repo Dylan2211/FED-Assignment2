@@ -325,8 +325,8 @@ body {
 .listing-img {
     width: 210px;
     height: 210px;
-    border-radius: 8px;
     object-fit: cover;
+    border-radius: 8px;
 }
 
 .listing-info {
@@ -343,7 +343,7 @@ body {
 .listing-image-container {
     position: absolute;
     top: 50%;
-    right: -40px; 
+    right: -40px; /* Adjust as needed */
     transform: translateY(-50%);
 }
 
@@ -369,26 +369,6 @@ body {
     margin-top: 30px;
     display: inline-block; 
 }
-
-
-
-
-.why-container {
-    width: calc(100% - 200px);
-    max-width: 1720px;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  .why-container h2 {
-    text-align: left;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  .why-container p {
-    line-height: 1.6;
-    color: #666;
-    font-size: 18px;
-  }
 
   .see-more-container {
     text-align: center;      
