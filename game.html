@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>T-Rex Game with Godot Assets</title>
+    <title>T‑Rex Game</title>
+    <!-- You can link a separate CSS file or add styles inline. Here, we include essential styles inline. -->
     <style>
-      /* Basic resets and styling */
       body {
         margin: 0;
         padding: 0;
-        background: linear-gradient(to top, #0e3aff, #b0faff);
+        background: linear-gradient(to bottom, #91fffb, #148dff);
         font-family: sans-serif;
         overflow: hidden;
       }
@@ -22,7 +22,7 @@
         background-size: cover;
         overflow: hidden;
       }
-      /* The dinosaur using your Godot sprite */
+      /* T‑Rex sprite */
       #trex {
         position: absolute;
         bottom: 0;
@@ -30,18 +30,17 @@
         width: 60px;
         height: 60px;
         background: url("images/godot_sprite.png") no-repeat;
-        background-size: 480px 60px; /* 8 frames (60px each) */
+        background-size: 480px 60px; /* 8 frames */
         background-position: 0px 0px;
       }
-      /* The cactus obstacles styled as spears */
+      /* Cactus obstacles styled as spears */
       .cactus {
         position: absolute;
         bottom: 0;
-        width: 10px; /* Thinner to resemble a spear */
-        height: 80px; /* Default spear height */
+        width: 10px;
+        height: 80px;
         background: linear-gradient(to top, #525252, #ababab);
         border-radius: 2px;
-        /* Create a spearhead shape */
         clip-path: polygon(
           50% 0%,
           100% 30%,
@@ -52,7 +51,7 @@
           0% 30%
         );
       }
-      /* Game over text */
+      /* Game Over text */
       .game-over {
         position: absolute;
         top: 50%;
@@ -62,63 +61,67 @@
         color: #fff;
         display: none;
       }
+      /* Back button */
+      .back-btn {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background: #fff;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        z-index: 1000;
+      }
     </style>
   </head>
   <body>
+    <button class="back-btn" onclick="goBack()">Back</button>
     <div class="game-container" id="game">
       <div id="trex"></div>
       <div class="game-over" id="gameOver">Game Over!</div>
     </div>
-
     <script>
-      /* -------------------------------
-         Global Variables & DOM Elements
-      ------------------------------- */
-      let spawnRate = 1000; // Initial spawn interval (ms)
-      let minSpawnRate = 100; // Minimum interval between spawns (ms)
-      let spawnDecreaseRate = 20; // How much the interval decreases per spawn (ms)
+      // T‑Rex Game Code
+      let spawnRate = 2500; // Initial spawn interval (ms)
+      let minSpawnRate = 500; // Minimum interval (ms)
+      let spawnDecreaseRate = 10; // Decrease (ms) per spawn
 
       let gameSpeed = 5; // Initial game speed (pixels per frame)
-      let speedIncreaseRate = 0.0025; // Increase in gameSpeed per frame
+      let speedIncreaseRate = 0.0015; // Increase per frame
       let maxSpeed = 15; // Maximum game speed
 
+      // Get game elements
       const trex = document.getElementById("trex");
       const gameContainer = document.getElementById("game");
       const gameOverText = document.getElementById("gameOver");
 
       // Physics & jump variables
-      let position = 0; // Vertical position in pixels
-      let velocity = 0; // Vertical velocity (pixels per second, upward is positive)
+      let position = 0;
+      let velocity = 0;
       let jumpCount = 0;
-      const maxJumps = 2; // Allow a double jump
+      const maxJumps = 2;
 
-      // Jump and gravity settings (tuned for your game)
-      const JUMP_VELOCITY = 680; // Initial jump velocity (pixels/second)
-      const GRAVITY_UP = -1300; // Gravity while ascending
-      const GRAVITY_DOWN = -3400; // Gravity while descending
+      // Jump and gravity settings
+      const JUMP_VELOCITY = 780;
+      const GRAVITY_UP = -2700;
+      const GRAVITY_DOWN = -3200;
 
       let lastTime = null;
       let gameOver = false;
 
-      /* -------------------------------
-         Game Physics Update (Animation Frame)
-      ------------------------------- */
       function update(time) {
         if (lastTime === null) lastTime = time;
-        const delta = (time - lastTime) / 1000; // Convert ms to seconds
+        const delta = (time - lastTime) / 1000;
         lastTime = time;
 
-        // If in the air or moving, update vertical movement
         if (position > 0 || velocity !== 0) {
-          // Use lighter gravity when moving upward, heavier when falling
           if (velocity > 0) {
             velocity += GRAVITY_UP * delta;
           } else {
             velocity += GRAVITY_DOWN * delta;
           }
           position += velocity * delta;
-
-          // Clamp to ground level
           if (position < 0) {
             position = 0;
             velocity = 0;
@@ -126,14 +129,10 @@
           }
           trex.style.bottom = position + "px";
         }
-
         if (!gameOver) requestAnimationFrame(update);
       }
       requestAnimationFrame(update);
 
-      /* -------------------------------
-         Input Handling for Jumping
-      ------------------------------- */
       document.addEventListener("keydown", (event) => {
         if (event.code === "Space" && !event.repeat && !gameOver) {
           if (position === 0) {
@@ -145,35 +144,22 @@
           }
         }
       });
-
       document.addEventListener("keyup", (event) => {
         if (event.code === "Space" && velocity > 0) {
-          velocity = JUMP_VELOCITY / 4; // Shorten the jump if Space is released early
+          velocity = JUMP_VELOCITY / 4;
         }
       });
 
-      /* -------------------------------
-         Collision Detection (Smaller Hitbox)
-      ------------------------------- */
       function checkCollision(trex, cactus) {
         const trexRect = trex.getBoundingClientRect();
         const cactusRect = cactus.getBoundingClientRect();
-
-        // Define padding to shrink the hitbox (tweak as needed)
-        const hitboxPadding = {
-          top: 5,
-          bottom: 10,
-          left: 8,
-          right: 8,
-        };
-
+        const hitboxPadding = { top: 5, bottom: 10, left: 8, right: 8 };
         const trexHitbox = {
           top: trexRect.top + hitboxPadding.top,
           bottom: trexRect.bottom - hitboxPadding.bottom,
           left: trexRect.left + hitboxPadding.left,
           right: trexRect.right - hitboxPadding.right,
         };
-
         return (
           trexHitbox.right > cactusRect.left &&
           trexHitbox.left < cactusRect.right &&
@@ -182,35 +168,23 @@
         );
       }
 
-      /* -------------------------------
-         Obstacle (Spear) Creation & Movement
-      ------------------------------- */
       function createCactus() {
         if (gameOver) return;
-
         const cactus = document.createElement("div");
         cactus.classList.add("cactus");
         cactus.style.left = gameContainer.offsetWidth + "px";
-
-        // Randomize spear height between 60px and 120px
         const randomHeight = Math.floor(Math.random() * 60) + 60;
         cactus.style.height = randomHeight + "px";
-
         gameContainer.appendChild(cactus);
-
-        // Move the spear and check for collision
         const cactusInterval = setInterval(() => {
           if (gameOver) {
             clearInterval(cactusInterval);
             return;
           }
-
           let cactusLeft = parseInt(cactus.style.left, 10);
           if (cactusLeft < -20) {
             clearInterval(cactusInterval);
-            if (cactus.parentNode) {
-              gameContainer.removeChild(cactus);
-            }
+            if (cactus.parentNode) gameContainer.removeChild(cactus);
           } else {
             cactus.style.left = cactusLeft - gameSpeed + "px";
             if (checkCollision(trex, cactus)) {
@@ -221,26 +195,18 @@
         }, 20);
       }
 
-      /* -------------------------------
-         Spawn Spears with Increasing Frequency
-      ------------------------------- */
       function spawnSpears() {
         if (gameOver) return;
         createCactus();
-        // Decrease the interval (spawnRate) until it reaches the minimum value
         spawnRate = Math.max(minSpawnRate, spawnRate - spawnDecreaseRate);
         setTimeout(spawnSpears, spawnRate);
       }
       setTimeout(spawnSpears, spawnRate);
 
-      /* -------------------------------
-         T-Rex Animation (8 Frames)
-      ------------------------------- */
       let frameIndex = 0;
-      const totalFrames = 8; // 8 frames in the sprite sheet
-      const frameWidth = 60; // Each frame is 60px wide
-      const frameInterval = 100; // Frame update interval (ms)
-
+      const totalFrames = 8;
+      const frameWidth = 60;
+      const frameInterval = 100;
       function animateTrex() {
         if (velocity === 0) {
           trex.style.backgroundPosition = "0px 0px";
@@ -253,17 +219,17 @@
         if (!gameOver) animateTrex();
       }, frameInterval);
 
-      /* -------------------------------
-         Game Loop: Increase Game Speed
-      ------------------------------- */
       function gameLoop() {
         if (gameOver) return;
-        if (gameSpeed < maxSpeed) {
-          gameSpeed += speedIncreaseRate;
-        }
+        if (gameSpeed < maxSpeed) gameSpeed += speedIncreaseRate;
         requestAnimationFrame(gameLoop);
       }
       gameLoop();
+
+      // "Back" button function
+      function goBack() {
+        window.location.href = "home_page.html";
+      }
     </script>
   </body>
 </html>
